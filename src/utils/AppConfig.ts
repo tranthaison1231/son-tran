@@ -33,7 +33,15 @@ export const AppConfig = {
         src: '/assets/images/project-web-design.png',
         alt: 'Project Web Design',
       },
-      categories: ['React', 'Frontend-Developer', 'Tailwind', 'TypeScript', 'AWS', 'Mapbox', 'Circle CI'],
+      categories: [
+        'React',
+        'Frontend-Developer',
+        'Tailwind',
+        'TypeScript',
+        'AWS',
+        'Mapbox',
+        'Circle CI',
+      ],
     },
     {
       name: 'SMARTOS',
@@ -43,7 +51,15 @@ export const AppConfig = {
         src: '/assets/images/project-web-design.png',
         alt: 'Project Web Design',
       },
-      categories: ['React', 'Frontend-Developer', 'Tailwind', 'TypeScript', 'AWS', 'Mapbox', 'Circle CI'],
+      categories: [
+        'React',
+        'Frontend-Developer',
+        'Tailwind',
+        'TypeScript',
+        'AWS',
+        'Mapbox',
+        'Circle CI',
+      ],
     },
   ],
 };

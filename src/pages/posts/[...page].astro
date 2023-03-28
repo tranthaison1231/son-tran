@@ -1,6 +1,4 @@
 ---
-import type { MarkdownInstance } from 'astro';
-import { BlogCard } from '@/partials/BlogCard';
 import type { Content } from '@/partials/BlogPost';
 import { Section } from '@/partials/Section';
 import Base from '@/templates/Base.astro';
@@ -36,9 +34,9 @@ const description = 'Pagination example';
   </Section>
   <Section>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-        {page.postList.map((post: MarkdownInstance<Content>) => (
-          <BlogCard post={post} />
-        ))}
+      {page.postList.map((post: MarkdownInstance<Content>) => (
+        <BlogCard post={post} />
+      ))}
     </div>
   </Section>
   <Section>
