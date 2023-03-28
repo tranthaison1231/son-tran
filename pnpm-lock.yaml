@@ -69,6 +69,9 @@ devDependencies:
   eslint-config-prettier:
     specifier: ^8.8.0
     version: 8.8.0(eslint@8.36.0)
+  eslint-plugin-astro:
+    specifier: ^0.26.1
+    version: 0.26.1(eslint@8.36.0)
   eslint-plugin-import:
     specifier: ^2.27.5
     version: 2.27.5(@typescript-eslint/parser@5.57.0)(eslint@8.36.0)
@@ -3221,6 +3224,23 @@ packages:
       debug: 3.2.7
       eslint: 8.36.0
       eslint-import-resolver-node: 0.3.7
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /eslint-plugin-astro@0.26.1(eslint@8.36.0):
+    resolution: {integrity: sha512-FEZOrOQ5ahenbwjKz5LYJpeOZUggDM54idrq5bTJdL4GsXy1xx2eyKy5UjGhh8NwddowCCPqfDHFfDz9oNj/ew==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      '@eslint-community/eslint-utils': 4.3.0(eslint@8.36.0)
+      '@jridgewell/sourcemap-codec': 1.4.14
+      '@typescript-eslint/types': 5.57.0
+      astro-eslint-parser: 0.13.2
+      eslint: 8.36.0
+      postcss: 8.4.21
+      postcss-selector-parser: 6.0.11
     transitivePeerDependencies:
       - supports-color
     dev: true

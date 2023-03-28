@@ -20,12 +20,7 @@ const Hero = () => (
           {Object.values(AppConfig.socials).map((social) =>
             social?.icon ? (
               <a href={social.link}>
-                <img
-                  className="h-12 w-12 hover:translate-y-1"
-                  src={social.icon}
-                  alt={social.alt}
-                  loading="lazy"
-                />
+                <img className="h-12 w-12 hover:translate-y-1" src={social.icon} alt={social.alt} loading="lazy" />
               </a>
             ) : null
           )}
@@ -33,12 +28,7 @@ const Hero = () => (
       </div>
 
       <div className="shrink-0">
-        <img
-          className="h-80 w-64"
-          src="/assets/images/avatar.svg"
-          alt="Avatar image"
-          loading="lazy"
-        />
+        <img className="h-80 w-64" src="/assets/images/avatar.svg" alt="Avatar image" loading="lazy" />
       </div>
     </div>
   </Section>

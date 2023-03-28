@@ -23,22 +23,17 @@ export const Projects = () => (
     title={
       <>
         Recent{' '}
-        <span className="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">
-          Projects
-        </span>
+        <span className="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">Projects</span>
       </>
     }
   >
     <div className="flex flex-col gap-6">
       {AppConfig.projects.map((project) => (
-        <div
-          key={project.name}
-          className="flex flex-col items-center gap-x-8 rounded-md bg-slate-800 p-3 md:flex-row"
-        >
+        <div key={project.name} className="flex flex-col items-center gap-x-8 rounded-md bg-slate-800 p-3 md:flex-row">
           <div className="shrink-0">
             <a href={project.link}>
               <img
-                className="h-36 w-36 hover:translate-y-1"
+                className="h-36 w-36 object-contain hover:translate-y-1"
                 src={project.img.src}
                 alt={project.img.alt}
                 loading="lazy"

@@ -23,8 +23,7 @@ export const BlogPost = ({ content, children }: Props) => (
   <Section>
     <h1 className="text-center text-3xl font-bold">{content.title}</h1>
     <div className="mt-2 text-center text-sm text-gray-400">
-      By {AppConfig.author} on{' '}
-      {format(new Date(content.pubDate), 'LLL d, yyyy')}
+      By {AppConfig.author} on {format(new Date(content.pubDate), 'LLL d, yyyy')}
     </div>
     <div className="mx-auto mt-5 max-w-prose">
       <div className="aspect-h-2 aspect-w-3">
@@ -36,9 +35,7 @@ export const BlogPost = ({ content, children }: Props) => (
         />
       </div>
 
-      <div className="prose prose-invert mt-8 prose-img:rounded-lg">
-        {children}
-      </div>
+      <div className="prose prose-invert mt-8 prose-img:rounded-lg">{children}</div>
     </div>
   </Section>
 );

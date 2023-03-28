@@ -13,10 +13,7 @@ const RecentPosts = ({ posts }: Props) => (
     title={
       <div className="flex items-baseline justify-between">
         <div>
-          Recent{' '}
-          <span className="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">
-            Posts
-          </span>
+          Recent <span className="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">Posts</span>
         </div>
 
         <div className="text-sm">

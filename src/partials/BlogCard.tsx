@@ -22,9 +22,7 @@ export const BlogCard = ({ post }: Props) => (
       <div className="px-3 pb-6 pt-4 text-center">
         <h2 className="text-xl font-semibold">{post.frontmatter.title}</h2>
 
-        <div className="mt-1 text-xs text-gray-400">
-          {format(new Date(post.frontmatter.pubDate), 'LLL d, yyyy')}
-        </div>
+        <div className="mt-1 text-xs text-gray-400">{format(new Date(post.frontmatter.pubDate), 'LLL d, yyyy')}</div>
 
         <div className="mt-2 text-sm">{post.frontmatter.description}</div>
       </div>

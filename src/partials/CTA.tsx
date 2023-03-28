@@ -13,8 +13,8 @@ export function CTA() {
           </div>
 
           <p className="mt-3 text-gray-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-            vero esse non molestias eos excepturi, inventore atque cupiditate.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non molestias eos excepturi,
+            inventore atque cupiditate.
           </p>
         </div>
 
