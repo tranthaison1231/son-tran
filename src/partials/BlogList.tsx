@@ -5,7 +5,7 @@ import type { Content } from '@/partials/BlogPost';
 
 const BlogList = ({ posts = [] }: { posts: MarkdownInstance<Content>[] }) => {
   return (
-    <div>
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
       {posts.map((post) => (
         <BlogCard key={post.url} post={post} />
       ))}

@@ -32,9 +32,7 @@ const description = 'Pagination example';
     </div>
   </Section>
   <Section>
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-      <BlogList posts={page.postList} />
-    </div>
+    <BlogList posts={page.data} />
   </Section>
   <Section>
     <div class="flex justify-center gap-8">
