@@ -50,6 +50,7 @@ export const Projects = () => (
               <div className="ml-3 flex flex-wrap gap-2">
                 {project.categories.map((category) => (
                   <div
+                    key={category}
                     className={`rounded-md px-2 py-1 text-xs font-semibold ${
                       CategoriesColors[category as CategoriesColorsKey]
                     }`}

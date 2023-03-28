@@ -19,7 +19,7 @@ const Hero = () => (
         <div className="mt-3 flex gap-1">
           {Object.values(AppConfig.socials).map((social) =>
             social?.icon ? (
-              <a href={social.link}>
+              <a href={social.link} key={social.link}>
                 <img className="h-12 w-12 hover:translate-y-1" src={social.icon} alt={social.alt} loading="lazy" />
               </a>
             ) : null

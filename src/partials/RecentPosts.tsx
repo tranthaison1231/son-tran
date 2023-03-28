@@ -24,7 +24,7 @@ const RecentPosts = ({ posts }: Props) => (
   >
     <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
       {posts.map((post) => (
-        <BlogCard post={post} />
+        <BlogCard post={post} key={post.url} />
       ))}
     </div>
   </Section>
