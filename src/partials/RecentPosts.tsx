@@ -1,21 +1,22 @@
 import type { MarkdownInstance } from 'astro';
-import type { IFrontmatter } from 'astro-boilerplate-components';
-import {
-  BlogGallery,
-  GradientText,
-  Section,
-} from 'astro-boilerplate-components';
 
-type IRecentPostsProps = {
-  postList: MarkdownInstance<IFrontmatter>[];
+import { BlogCard } from './BlogCard';
+import type { Content } from './BlogPost';
+import { Section } from './Section';
+
+type Props = {
+  posts: MarkdownInstance<Content>[];
 };
 
-const RecentPosts = (props: IRecentPostsProps) => (
+const RecentPosts = ({ posts }: Props) => (
   <Section
     title={
       <div className="flex items-baseline justify-between">
         <div>
-          Recent <GradientText>Posts</GradientText>
+          Recent{' '}
+          <span className="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">
+            Posts
+          </span>
         </div>
 
         <div className="text-sm">
@@ -24,7 +25,11 @@ const RecentPosts = (props: IRecentPostsProps) => (
       </div>
     }
   >
-    <BlogGallery postList={props.postList} />
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      {posts.map((post) => (
+        <BlogCard post={post} />
+      ))}
+    </div>
   </Section>
 );
 

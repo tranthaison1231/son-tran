@@ -1,15 +1,8 @@
 ---
-import type {
-  FrontmatterPage,
-  IFrontmatter,
-} from 'astro-boilerplate-components';
-import {
-  BlogGallery,
-  NewerOlderPagination,
-  PaginationHeader,
-  Section,
-} from 'astro-boilerplate-components';
-
+import type { MarkdownInstance } from 'astro';
+import { BlogCard } from '@/partials/BlogCard';
+import type { Content } from '@/partials/BlogPost';
+import { Section } from '@/partials/Section';
 import Base from '@/templates/Base.astro';
 import { AppConfig } from '@/utils/AppConfig';
 import { sortByDate } from '@/utils/Posts';
@@ -19,16 +12,14 @@ type GetStaticPaths = {
 };
 
 export async function getStaticPaths({ paginate }: GetStaticPaths) {
-  const allPosts = await Astro.glob<IFrontmatter>('./*.md');
+  const allPosts = await Astro.glob<Content>('./*.md');
   const sortedPosts = sortByDate(allPosts);
   return paginate(sortedPosts, { pageSize: 6 });
 }
 
-interface Props {
-  page: FrontmatterPage;
-}
 
-const { page } = Astro.props as Props;
+
+const { page } = Astro.props;
 const titleSuffix = ` - ${AppConfig.site_name}`;
 const titleBase = `Blog page ${page.currentPage}`;
 const title = titleBase + titleSuffix;
@@ -37,17 +28,23 @@ const description = 'Pagination example';
 
 <Base head={{ title, description }}>
   <Section>
-    <PaginationHeader
-      title='Random title here'
-      description='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    />
-  </Section>
+    <div class="text-center">
+    <h1 class="text-3xl font-bold">Random title here</h1>
 
-  <Section>
-    <BlogGallery postList={page.data} />
+    <div class="mt-3 text-gray-200">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+  </div>
   </Section>
-
   <Section>
-    <NewerOlderPagination page={page} />
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+        {page.postList.map((post: MarkdownInstance<Content>) => (
+          <BlogCard post={post} />
+        ))}
+    </div>
+  </Section>
+  <Section>
+    <div class="flex justify-center gap-8">
+      {page.url.prev && <a href={page.url.prev}>← Newer Posts</a>}
+      {page.url.next && <a href={page.url.next}>Older Posts →</a>}
+    </div>
   </Section>
 </Base>
