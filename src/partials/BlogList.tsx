@@ -3,7 +3,7 @@ import type { MarkdownInstance } from 'astro';
 import { BlogCard } from '@/partials/BlogCard';
 import type { Content } from '@/partials/BlogPost';
 
-const BlogList = ({ posts }: { posts: MarkdownInstance<Content>[] }) => {
+const BlogList = ({ posts = [] }: { posts: MarkdownInstance<Content>[] }) => {
   return (
     <div>
       {posts.map((post) => (
