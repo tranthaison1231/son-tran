@@ -1,0 +1,43 @@
+---
+import { format } from 'date-fns';
+
+import { AppConfig } from '@/utils/AppConfig';
+import Section from './Section.astro';
+
+
+export interface Content {
+  title: string;
+  description: string;
+  pubDate: string;
+  imgSrc: string;
+  imgAlt: string;
+  draft: boolean;
+}
+
+type Props = {
+  content: Content;
+};
+
+const { content } = Astro.props as Props;
+---
+
+<Section>
+  <h1 class="text-center text-3xl font-bold">{content.title}</h1>
+  <div class="mt-2 text-center text-sm text-gray-400">
+    By {AppConfig.author} on {format(new Date(content.pubDate), 'LLL d, yyyy')}
+  </div>
+  <div class="mx-auto mt-5 max-w-prose">
+    <div class="aspect-h-2 aspect-w-3">
+      <img
+        class="h-full w-full rounded-lg object-cover object-center"
+        src={content.imgSrc}
+        alt={content.imgAlt}
+        loading="lazy"
+      />
+    </div>
+
+    <div class="prose prose-invert mt-8 prose-img:rounded-lg">
+      <slot />
+    </div>
+  </div>
+</Section>

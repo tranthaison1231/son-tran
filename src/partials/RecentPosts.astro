@@ -1,0 +1,29 @@
+---
+import type { MarkdownInstance } from 'astro';
+
+import { type Content } from './BlogPost.astro';
+import BlogCard from './BlogCard.astro';
+import Section from './Section.astro';
+
+interface Props {
+  posts: MarkdownInstance<Content>[];
+}
+
+const { posts } = Astro.props as Props;
+---
+
+<Section>
+  <div slot="title">
+    <div class="flex items-baseline justify-between">
+      <div>
+        Recent <span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">Posts</span>
+      </div>
+      <div class="text-sm">
+        <a href="/posts">View all Posts →</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {posts.map(post => <BlogCard post={post} />)}
+  </div>
+</Section>
