@@ -3,8 +3,8 @@ import BlogList from '@/partials/BlogList.astro';
 import Section from '@/partials/Section.astro';
 import Base from '@/templates/Base.astro';
 import type { Content } from '@/types';
-import { AppConfig } from '@/utils/AppConfig';
-import { sortByDate } from '@/utils/Posts';
+import { AppConfig } from '@/utils/app-config';
+import { sortByDate } from '@/utils/post';
 
 type GetStaticPaths = {
   paginate: any;
