@@ -47,3 +47,22 @@ export const AppConfig = {
     },
   ],
 };
+
+export const Services = [
+  {
+    title: 'Web Developer',
+    icon: '/assets/images/web.png',
+  },
+  {
+    title: 'React Native Developer',
+    icon: '/assets/images/mobile.png',
+  },
+  {
+    title: 'Backend Developer',
+    icon: '/assets/images/backend.png',
+  },
+  {
+    title: 'Content Creator',
+    icon: '/assets/images/creator.png',
+  },
+];

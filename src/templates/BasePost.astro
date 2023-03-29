@@ -1,9 +1,9 @@
 ---
-import type { Content } from '@/partials/BlogPost.astro';
 import BlogPost from '@/partials/BlogPost.astro';
 import CTA from '@/partials/CTA.astro';
 import Base from '@/templates/Base.astro';
-import { AppConfig } from '@/utils/AppConfig';
+import type { Content } from '@/types';
+import { AppConfig } from '@/utils/app-config';
 
 export interface Props {
   content: Content;
