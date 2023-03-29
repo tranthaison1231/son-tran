@@ -3,12 +3,13 @@ import type { ReactNode } from 'react';
 
 type Props = {
   title?: ReactNode;
+  class?: string;
 };
 
 const { title } = Astro.props as Props;
 ---
 
-<div class="mx-auto max-w-screen-lg px-3 py-6">
+<div class="mx-auto max-w-screen-lg px-4 py-6">
   {title && <div class="mb-6 text-2xl font-bold">{title}</div>}
   <slot />
 </div>
