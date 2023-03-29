@@ -1,7 +1,9 @@
 ---
-import { AppConfig } from '@/utils/AppConfig';
-import Section from './Section.astro';
+import { Picture } from 'astro-imagetools/components';
 
+import { AppConfig } from '@/utils/AppConfig';
+
+import Section from './Section.astro';
 ---
 
 <Section>
@@ -21,8 +23,8 @@ import Section from './Section.astro';
         {
           Object.values(AppConfig.socials).map(social =>
             social?.icon ? (
-              <a href={social.link}>
-                <img class="h-12 w-12 hover:translate-y-1" src={social.icon} alt={social.alt} loading="lazy" />
+              <a href={social.link} class="hover:scale-125">
+                <Picture width={40} src={social.icon} alt={social.alt} loading="lazy" />
               </a>
             ) : null
           )

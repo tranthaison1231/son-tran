@@ -1,18 +1,11 @@
 ---
+import { Picture } from 'astro-imagetools/components';
 import { format } from 'date-fns';
 
+import type { Content } from '@/types';
 import { AppConfig } from '@/utils/AppConfig';
+
 import Section from './Section.astro';
-
-
-export interface Content {
-  title: string;
-  description: string;
-  pubDate: string;
-  imgSrc: string;
-  imgAlt: string;
-  draft: boolean;
-}
 
 type Props = {
   content: Content;
@@ -27,15 +20,7 @@ const { content } = Astro.props as Props;
     By {AppConfig.author} on {format(new Date(content.pubDate), 'LLL d, yyyy')}
   </div>
   <div class="mx-auto mt-5 max-w-prose">
-    <div class="aspect-h-2 aspect-w-3">
-      <img
-        class="h-full w-full rounded-lg object-cover object-center"
-        src={content.imgSrc}
-        alt={content.imgAlt}
-        loading="lazy"
-      />
-    </div>
-
+    <Picture aspect={1.5} src={content.imgSrc} alt={content.imgAlt} loading="lazy" />
     <div class="prose prose-invert mt-8 prose-img:rounded-lg">
       <slot />
     </div>

@@ -26,7 +26,6 @@
     "@typescript-eslint/parser": "^5.57.0",
     "astro": "2.1.8",
     "astro-eslint-parser": "^0.13.2",
-    "astro-imagetools": "^0.8.1",
     "astro-robots-txt": "^0.4.1",
     "eslint": "^8.37.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -51,10 +50,11 @@
   "dependencies": {
     "date-fns": "^2.29.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "astro-imagetools": "^0.8.1"
   },
   "volta": {
     "node": "16.15.1"
   },
-  "author": "Ixartz (https://github.com/ixartz)"
+  "author": "Son Tran (https://github.com/tranthaison1231)"
 }

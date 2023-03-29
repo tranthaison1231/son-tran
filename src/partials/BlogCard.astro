@@ -1,7 +1,9 @@
 ---
-import { format } from 'date-fns';
 import type { MarkdownInstance } from 'astro';
-import type { Content } from '@/partials/BlogPost.astro';
+import { Picture } from 'astro-imagetools/components';
+import { format } from 'date-fns';
+
+import type { Content } from '@/types';
 
 interface Props {
   post: MarkdownInstance<Content>;
@@ -12,14 +14,7 @@ const { post } = Astro.props as Props;
 
 <a class="hover:translate-y-1" href={post.url}>
   <div class="overflow-hidden rounded-md bg-slate-800">
-    <div class="aspect-h-2 aspect-w-3">
-      <img
-        class="h-full w-full object-cover object-center"
-        src={post.frontmatter.imgSrc}
-        alt={post.frontmatter.imgAlt}
-        loading="lazy"
-      />
-    </div>
+    <Picture aspect={1.5} src={post.frontmatter.imgSrc} alt={post.frontmatter.imgAlt} loading="lazy" />
     <div class="px-3 pb-6 pt-4 text-center">
       <h2 class="text-xl font-semibold">{post.frontmatter.title}</h2>
       <div class="mt-1 text-xs text-gray-400">{format(new Date(post.frontmatter.pubDate), 'LLL d, yyyy')}</div>
