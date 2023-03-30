@@ -18,9 +18,15 @@ module.exports = {
           '70%': { transform: 'rotate(0.0deg)' },
           '100%': { transform: 'rotate(0.0deg)' },
         },
+        jump: {
+          '0%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(24px)' },
+          '100%': { transform: 'translateY(0)' },
+        },
       },
       animation: {
         wave: 'wave 1.5s infinite',
+        jump: 'jump 1.5s infinite',
       },
     },
   },

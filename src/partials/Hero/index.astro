@@ -4,7 +4,6 @@ import { Picture } from 'astro-imagetools/components';
 import { AppConfig } from '@/utils/app-config';
 
 import ComputersCanvas from './ComputersCanvas';
-import ScrollDown from './ScrollDown';
 ---
 
 <div class="mx-auto max-w-screen-lg px-4 py-6">
@@ -17,7 +16,7 @@ import ScrollDown from './ScrollDown';
             <span class="text-[#915EFF]">
               {AppConfig.name}
             </span>
-            <span class="animate-wave">👋🏻</span>
+            <span class="inline-block animate-wave">👋🏻</span>
           </h1>
           <p
             class="xs:text-[20px] mt-2 text-[24px] font-medium text-white sm:text-[26px] lg:text-[30px] lg:leading-[40px]"
@@ -46,7 +45,11 @@ import ScrollDown from './ScrollDown';
     </div>
     <ComputersCanvas client:idle />
     <div class="absolute bottom-48 flex w-full items-center justify-center sm:bottom-32">
-      <ScrollDown client:idle />
+      <a href="#about">
+        <div class="flex h-[64px] w-[35px] items-start justify-center rounded-3xl border-4 border-[#aaa6c3] p-2">
+          <div class="mb-1 h-3 w-3 animate-jump rounded-full bg-[#aaa6c3]"></div>
+        </div>
+      </a>
     </div>
   </section>
 </div>
