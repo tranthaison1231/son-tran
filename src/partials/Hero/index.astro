@@ -3,7 +3,7 @@ import { Picture } from 'astro-imagetools/components';
 
 import { AppConfig } from '@/utils/app-config';
 
-import ComputersCanvas from './ComputersCanvas';
+import LazyComputersCanvas from './LazyComputerCanvas';
 ---
 
 <div class="mx-auto max-w-screen-lg px-4 py-6">
@@ -43,7 +43,7 @@ import ComputersCanvas from './ComputersCanvas';
         </div>
       </div>
     </div>
-    <ComputersCanvas client:idle />
+    <LazyComputersCanvas client:only />
     <div class="absolute bottom-48 flex w-full items-center justify-center sm:bottom-32">
       <a href="#about">
         <div class="flex h-[64px] w-[35px] items-start justify-center rounded-3xl border-4 border-[#aaa6c3] p-2">
