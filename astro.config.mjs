@@ -8,9 +8,6 @@ import { astroImageTools } from 'astro-imagetools';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://son-tran.vercel.app/',
-  experimental: {
-    integrations: true,
-  },
   markdown: {
     shikiConfig: {
       theme: 'monokai',
