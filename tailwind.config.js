@@ -1,13 +1,42 @@
-/* eslint-disable global-require */
-/* eslint-disable import/no-extraneous-dependencies */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}'],
+  content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
   theme: {
     extend: {
       backgroundImage: {
         'hero-pattern': "url('/assets/images/hero-bg.webp')",
       },
       keyframes: {
+        'fade-left': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(2rem)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+        'fade-right': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(-2rem)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+        'fade-down': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(-2rem)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
         wave: {
           '0%': { transform: 'rotate(0.0deg)' },
           '15%': { transform: 'rotate(14.0deg)' },
@@ -27,6 +56,9 @@ module.exports = {
       animation: {
         wave: 'wave 1.5s infinite',
         jump: 'jump 1.5s infinite',
+        'fade-left': 'fade-left 1s ease-out',
+        'fade-right': 'fade-right 1s ease-out',
+        'fade-down': 'fade-down 1s ease-out',
       },
     },
   },
