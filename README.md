@@ -15,7 +15,7 @@ A complete Blog feature:
 Developer experience first:
 
 - 🔥 Astro
-- 🎨 Tailwind CSS with aspect ratio and typography plugin
+- 🎨 Tailwind CSS with typography plugin
 - 🎉 TypeScript
 - ✏️ ESLint compatible with .astro files
 - 🛠 Prettier compatible with .astro files
