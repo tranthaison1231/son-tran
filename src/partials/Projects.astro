@@ -6,17 +6,17 @@ import { AppConfig } from '@/utils/app-config';
 import Section from './Section.astro';
 
 const CategoriesColors = {
-  TypeScript: 'bg-blue-400 text-blue-900',
-  React: 'bg-purple-400 text-purple-900',
-  Next: 'bg-pink-400 text-pink-900',
-  Astro: 'bg-yellow-400 text-yellow-900',
-  Tailwind: 'bg-green-400 text-green-900',
-  Svelte: 'bg-red-400 text-red-900',
-  Node: 'bg-indigo-400 text-indigo-900',
-  'Frontend-Developer': 'bg-blue-400 text-blue-900',
-  AWS: 'bg-yellow-400 text-yellow-900',
-  Mapbox: 'bg-sky-400 text-sky-900',
-  'Circle CI': 'bg-lime-400 text-lime-900',
+  TypeScript: 'bg-blue-400',
+  React: 'bg-purple-400',
+  Next: 'bg-pink-400',
+  Astro: 'bg-yellow-400',
+  Tailwind: 'bg-green-400',
+  Svelte: 'bg-red-400',
+  Node: 'bg-indigo-400',
+  'Frontend-Developer': 'bg-blue-400',
+  AWS: 'bg-yellow-400',
+  Mapbox: 'bg-sky-400',
+  'Circle CI': 'bg-lime-400',
 };
 
 type CategoriesColorsKey = keyof typeof CategoriesColors;
@@ -46,7 +46,7 @@ type CategoriesColorsKey = keyof typeof CategoriesColors;
               <div class="ml-3 flex flex-wrap gap-2">
                 {project.categories.map(category => (
                   <div
-                    class={`rounded-md px-2 py-1 text-xs font-semibold ${
+                    class={`rounded-md px-2 py-1 text-xs font-semibold text-black ${
                       CategoriesColors[category as CategoriesColorsKey]
                     }`}
                   >
