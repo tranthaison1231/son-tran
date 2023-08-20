@@ -12,8 +12,9 @@ const ComputersCanvas = () => {
     <Canvas
       frameloop="demand"
       shadows
+      style={{ height: 700 }}
       dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [10, 20, 10], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
@@ -23,8 +24,8 @@ const ComputersCanvas = () => {
         <pointLight intensity={1} />
         <primitive
           object={computer.scene}
-          scale={isMobile ? 0.4 : 0.55}
-          position={isMobile ? [0, -1.4, -0.5] : [0, -1.8, -1]}
+          scale={isMobile ? 0.4 : 0.5}
+          position={isMobile ? [0, -1.4, -1] : [0, -1.8, -1]}
           rotation={[-0.01, -0.2, -0.1]}
         />
       </mesh>

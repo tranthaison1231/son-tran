@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      colors: {
+        primary: '#050716',
+      },
       backgroundImage: {
         'hero-pattern': "url('/src/assets/images/hero-bg.webp')",
       },
