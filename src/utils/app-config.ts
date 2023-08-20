@@ -1,7 +1,6 @@
-import acciona from '../assets/images/acciona-logo.png';
-import facebook from '../assets/images/facebook-icon.png';
-import linkedin from '../assets/images/linkedin-icon.png';
-import smartos from '../assets/images/smartos-logo.png';
+import acciona from '@/assets/images/acciona-logo.png';
+import facebook from '@/assets/images/facebook-icon.png';
+import linkedin from '@/assets/images/linkedin-icon.png';
 
 export const AppConfig = {
   site_name: 'Son Tran - Fullstack Developer',
@@ -45,7 +44,7 @@ export const AppConfig = {
       description: 'A smarter office space management software',
       link: '/',
       img: {
-        src: smartos,
+        src: '/images/smartos-logo.png',
         alt: 'Project Web Design',
       },
       categories: ['React', 'Frontend-Developer', 'Tailwind', 'TypeScript', 'AWS', 'Mapbox', 'Circle CI'],
