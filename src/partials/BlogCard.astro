@@ -13,8 +13,8 @@ const { post } = Astro.props as Props;
 <a class="hover:translate-y-1" href={`/posts/${post.slug}`}>
   <div class="overflow-hidden rounded-md bg-slate-800">
     <Image
-      width="300"
-      height="300"
+      width="1000"
+      height="1000"
       class="aspect-[3/2] w-full"
       src={post.data.imgSrc}
       alt={post.data.imgAlt}
