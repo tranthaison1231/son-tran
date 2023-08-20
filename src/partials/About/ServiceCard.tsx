@@ -1,6 +1,8 @@
 interface Props {
   title: string;
-  icon: string;
+  icon: {
+    src: string;
+  };
 }
 
 const ServiceCard = ({ title, icon }: Props) => {

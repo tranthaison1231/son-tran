@@ -37,6 +37,12 @@ module.exports = {
             transform: 'translateY(0)',
           },
         },
+        typing: {
+          '0%': { width: '0', border: 'none' },
+          '1%': { opacity: '1', 'border-right': '.15em solid #fff' },
+          '99%': { 'border-right': '.15em solid #fff' },
+          '100%': { opacity: '1', border: 'none' },
+        },
         wave: {
           '0%': { transform: 'rotate(0.0deg)' },
           '15%': { transform: 'rotate(14.0deg)' },
@@ -59,6 +65,7 @@ module.exports = {
         'fade-left': 'fade-left 1s ease-out',
         'fade-right': 'fade-right 1s ease-out',
         'fade-down': 'fade-down 1s ease-out',
+        typing: 'typing 2s steps(60, end)',
       },
     },
   },
