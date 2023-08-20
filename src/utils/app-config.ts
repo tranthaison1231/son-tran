@@ -1,9 +1,9 @@
 import acciona from '@/assets/images/acciona-logo.png';
 import backend from '@/assets/images/backend.png';
+import blockchain from '@/assets/images/blockchain.png';
 import creator from '@/assets/images/creator.png';
 import facebook from '@/assets/images/facebook-icon.png';
 import linkedin from '@/assets/images/linkedin-icon.png';
-import mobile from '@/assets/images/mobile.png';
 import smartos from '@/assets/images/smartos-logo.png';
 import web from '@/assets/images/web.png';
 
@@ -63,8 +63,8 @@ export const Services = [
     icon: web,
   },
   {
-    title: 'React Native Developer',
-    icon: mobile,
+    title: 'Blockchain Developer',
+    icon: blockchain,
   },
   {
     title: 'Backend Developer',
