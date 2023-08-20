@@ -1,26 +1,35 @@
 ---
-import { Picture } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
 import { format } from 'date-fns';
 
-import type { Content } from '@/types';
 import { AppConfig } from '@/utils/app-config';
 
 import Section from './Section.astro';
 
 type Props = {
-  content: Content;
+  post: CollectionEntry<'blog'>;
 };
 
-const { content } = Astro.props as Props;
+const { post } = Astro.props as Props;
 ---
 
 <Section>
-  <h1 class="text-center text-3xl font-bold">{content.title}</h1>
+  <h1 class="text-center text-3xl font-bold" transition:name={`post-title-${post.slug}`}>{post.data.title}</h1>
   <div class="mt-2 text-center text-sm text-gray-400">
-    By {AppConfig.author} on {format(new Date(content.pubDate), 'LLL d, yyyy')}
+    By {AppConfig.author} on {format(new Date(post.data.pubDate), 'LLL d, yyyy')}
   </div>
   <div class="mx-auto mt-5 max-w-prose">
-    <Picture aspect={1.5} src={content.imgSrc} alt={content.imgAlt} loading="lazy" />
+    <Image
+      width="400"
+      height="400"
+      class="aspect-[3/2] w-full"
+      src={post.data.imgSrc}
+      alt={post.data.imgAlt}
+      loading="lazy"
+      format="webp"
+      transition:name={`post-image-${post.slug}`}
+    />
     <div class="prose prose-invert mt-8 prose-img:rounded-lg">
       <slot />
     </div>

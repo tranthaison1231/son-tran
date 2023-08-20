@@ -1,28 +1,20 @@
 ---
-import type { MarkdownInstance } from 'astro';
-
-import type { Content } from '@/types';
+import type { CollectionEntry } from 'astro:content';
 
 import BlogCard from './BlogCard.astro';
 import Section from './Section.astro';
 
 interface Props {
-  posts: MarkdownInstance<Content>[];
+  posts: CollectionEntry<'blog'>[];
 }
 
 const { posts } = Astro.props as Props;
 ---
 
 <Section>
-  <div slot="title">
-    <div class="flex items-baseline justify-between">
-      <div>
-        Recent <span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">Posts</span>
-      </div>
-      <div class="text-sm">
-        <a href="/posts">View all Posts →</a>
-      </div>
-    </div>
+  <div class="mb-3 flex items-baseline justify-between text-2xl">
+    <div>New Blog Posts</div>
+    <a href="/posts">View all Posts →</a>
   </div>
   <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
     {posts.map(post => <BlogCard post={post} />)}

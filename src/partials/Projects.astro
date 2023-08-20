@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 import { AppConfig } from '@/utils/app-config';
 
@@ -23,7 +23,7 @@ type CategoriesColorsKey = keyof typeof CategoriesColors;
 ---
 
 <Section>
-  <div slot="title">
+  <div class="mb-3 text-2xl">
     Recent{' '}
     <span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">Projects</span>
   </div>
@@ -33,7 +33,7 @@ type CategoriesColorsKey = keyof typeof CategoriesColors;
         <div class="flex flex-col items-center gap-x-8 rounded-md bg-slate-800 p-3 md:flex-row">
           <div class="shrink-0 hover:translate-y-1">
             <a href={project.link}>
-              <Picture height={60} width={160} src={project.img.src} alt={project.img.alt} loading="lazy" />
+              <Image height={60} width={160} src={project.img.src} alt={project.img.alt} loading="lazy" format="webp" />
             </a>
           </div>
 

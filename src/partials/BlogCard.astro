@@ -1,24 +1,31 @@
 ---
-import type { MarkdownInstance } from 'astro';
-import { Picture } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
 import { format } from 'date-fns';
 
-import type { Content } from '@/types';
-
 interface Props {
-  post: MarkdownInstance<Content>;
+  post: CollectionEntry<'blog'>;
 }
 
 const { post } = Astro.props as Props;
 ---
 
-<a class="hover:translate-y-1" href={post.url}>
+<a class="hover:translate-y-1" href={`/posts/${post.slug}`}>
   <div class="overflow-hidden rounded-md bg-slate-800">
-    <Picture aspect={1.5} src={post.frontmatter.imgSrc} alt={post.frontmatter.imgAlt} loading="lazy" />
+    <Image
+      width="300"
+      height="300"
+      class="aspect-[3/2] w-full"
+      src={post.data.imgSrc}
+      alt={post.data.imgAlt}
+      loading="lazy"
+      format="webp"
+      transition:name={`post-image-${post.slug}`}
+    />
     <div class="px-3 pb-6 pt-4 text-center">
-      <h2 class="text-xl font-semibold">{post.frontmatter.title}</h2>
-      <div class="mt-1 text-xs text-gray-400">{format(new Date(post.frontmatter.pubDate), 'LLL d, yyyy')}</div>
-      <div class="mt-2 text-sm">{post.frontmatter.description}</div>
+      <h2 class="text-xl font-semibold" transition:name={`post-title-${post.slug}`}>{post.data.title}</h2>
+      <div class="mt-1 text-xs text-gray-400">{format(new Date(post.data.pubDate), 'LLL d, yyyy')}</div>
+      <div class="mt-2 text-sm">{post.data.description}</div>
     </div>
   </div>
 </a>

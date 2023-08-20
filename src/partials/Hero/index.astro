@@ -1,6 +1,7 @@
 ---
-import { Picture } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
+import avatar from '@/assets/images/avatar.svg';
 import { AppConfig } from '@/utils/app-config';
 
 import LazyComputersCanvas from './LazyComputerCanvas';
@@ -30,7 +31,7 @@ import LazyComputersCanvas from './LazyComputerCanvas';
               Object.values(AppConfig.socials).map(social =>
                 social?.icon ? (
                   <a href={social.link} class="hover:scale-125">
-                    <Picture width={40} src={social.icon} alt={social.alt} loading="lazy" />
+                    <Image width="40" height="40" src={social.icon} alt={social.alt} loading="lazy" format="webp" />
                   </a>
                 ) : null
               )
@@ -39,7 +40,7 @@ import LazyComputersCanvas from './LazyComputerCanvas';
         </div>
 
         <div class="hidden shrink-0 animate-fade-left sm:block">
-          <img width={256} height={320} src="/assets/images/avatar.svg" alt="Avatar image" />
+          <Image width={256} height={320} src={avatar} alt="Avatar image" />
         </div>
       </div>
     </div>

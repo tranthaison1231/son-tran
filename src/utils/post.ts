@@ -1,7 +1,5 @@
-import type { MarkdownInstance } from 'astro';
+import type { CollectionEntry } from 'astro:content';
 
-import type { Content } from '../types/index';
-
-export const sortByDate = (posts: MarkdownInstance<Content>[]) => {
-  return posts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+export const sortByDate = (posts: CollectionEntry<'blog'>[]) => {
+  return posts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 };

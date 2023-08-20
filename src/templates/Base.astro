@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 import Footer from '@/partials/Footer.astro';
 import Navbar from '@/partials/Navbar.astro';
 import { AppConfig } from '@/utils/app-config';
@@ -32,11 +34,13 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="author" content={AppConfig.author} />
 
     <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <ViewTransitions />
   </head>
   <body class="bg-[#050716] bg-hero-pattern bg-center bg-repeat text-gray-100">
     <Navbar />

@@ -1,8 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
+
 import BlogList from '@/partials/BlogList.astro';
 import Section from '@/partials/Section.astro';
 import Base from '@/templates/Base.astro';
-import type { Content } from '@/types';
 import { AppConfig } from '@/utils/app-config';
 import { sortByDate } from '@/utils/post';
 
@@ -11,7 +12,7 @@ type GetStaticPaths = {
 };
 
 export async function getStaticPaths({ paginate }: GetStaticPaths) {
-  const allPosts = await Astro.glob<Content>('./*.md');
+  const allPosts = await getCollection('blog');
   const sortedPosts = sortByDate(allPosts);
   return paginate(sortedPosts, { pageSize: 6 });
 }
@@ -26,7 +27,7 @@ const description = 'Pagination example';
 <Base head={{ title, description }}>
   <Section>
     <div class="text-center">
-      <h1 class="text-3xl font-bold">Random title here</h1>
+      <h1 class="text-3xl font-bold">New Blog Post</h1>
 
       <div class="mt-3 text-gray-200">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
     </div>
