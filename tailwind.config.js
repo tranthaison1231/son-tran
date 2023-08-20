@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('src/assets/images/hero-bg.webp')",
+        'hero-pattern': "url('/src/assets/images/hero-bg.webp')",
       },
       keyframes: {
         'fade-left': {
