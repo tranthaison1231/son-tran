@@ -75,3 +75,22 @@ export const Services = [
     icon: creator,
   },
 ];
+
+export const NAVBAR_LINKS = [
+  {
+    name: 'Blogs',
+    url: '/posts',
+  },
+  {
+    name: 'Courses',
+    url: '/courses',
+  },
+  {
+    name: 'GitHub',
+    url: AppConfig.socials.github.link,
+  },
+  {
+    name: 'Linkedin',
+    url: AppConfig.socials.linkedin.link,
+  },
+];

@@ -1,5 +1,5 @@
 ---
-import { AppConfig } from '@/utils/app-config';
+import { AppConfig, NAVBAR_LINKS } from '@/utils/app-config';
 
 import NavbarMobile from './NavbarMobile';
 import Section from './Section.astro';
@@ -17,7 +17,7 @@ import Section from './Section.astro';
           viewBox="0 0 24 24"
           fill="none"
           stroke-width="1.5"
-          stroke-linecap="round"
+          stroke-lineCap="round"
           stroke-linejoin="round"
         >
           <path d="M0 0h24v24H0z" stroke="none"></path>
@@ -32,18 +32,13 @@ import Section from './Section.astro';
 
     <nav class="hidden sm:block">
       <ul class="flex gap-x-3 font-medium text-gray-200">
-        <li class="hover:text-white">
-          <a href="/posts">Blogs</a>
-        </li>
-        <li class="hover:text-white">
-          <a href="/courses">Courses</a>
-        </li>
-        <li class="hover:text-white">
-          <a href={AppConfig.socials.github.link}>GitHub</a>
-        </li>
-        <li class="hover:text-white">
-          <a href={AppConfig.socials.linkedin.link}>Linkedin</a>
-        </li>
+        {
+          NAVBAR_LINKS.map(link => (
+            <li class="hover:text-white">
+              <a href={link.url}>{link.name}</a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
     <NavbarMobile client:only />
