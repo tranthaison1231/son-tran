@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 
 import About from '@/partials/About/index.astro';
 import Hero from '@/partials/Hero/index.astro';
-import Projects from '@/partials/Projects.astro';
 import RecentPosts from '@/partials/RecentPosts.astro';
 import Base from '@/templates/Base.astro';
 import { AppConfig } from '@/utils/app-config';
@@ -20,6 +19,6 @@ const { description } = AppConfig;
 <Base head={{ title, description }}>
   <Hero />
   <About />
-  <Projects />
+  <!-- <Projects /> -->
   <RecentPosts posts={lastThreePosts} />
 </Base>
