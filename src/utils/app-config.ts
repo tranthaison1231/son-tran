@@ -1,3 +1,8 @@
+import acciona from '../assets/images/acciona-logo.png';
+import facebook from '../assets/images/facebook-icon.png';
+import linkedin from '../assets/images/linkedin-icon.png';
+import smartos from '../assets/images/smartos-logo.png';
+
 export const AppConfig = {
   site_name: 'Son Tran - Fullstack Developer',
   name: 'Son Tran',
@@ -14,12 +19,12 @@ export const AppConfig = {
     },
     linkedin: {
       link: 'https://www.linkedin.com/in/son-tran-b26797182/',
-      icon: '/src/assets/images/linkedin-icon.png',
+      icon: linkedin,
       alt: 'LinkedIn Icon',
     },
     facebook: {
       link: 'https://www.facebook.com/son.tran.17.11/',
-      icon: '/src/assets/images/facebook-icon.png',
+      icon: facebook,
       alt: 'Facebook Icon',
     },
   },
@@ -30,7 +35,7 @@ export const AppConfig = {
         'A management platform helps construction company to manage their employees with timesheet, manage other modules and their partners',
       link: '/',
       img: {
-        src: '/src/assets/images/acciona-logo.png',
+        src: acciona,
         alt: 'Acciona Logo',
       },
       categories: ['React', 'Frontend-Developer', 'Tailwind', 'TypeScript', 'AWS', 'Mapbox', 'Circle CI'],
@@ -40,7 +45,7 @@ export const AppConfig = {
       description: 'A smarter office space management software',
       link: '/',
       img: {
-        src: '/src/assets/images/smartos-logo.png',
+        src: smartos,
         alt: 'Project Web Design',
       },
       categories: ['React', 'Frontend-Developer', 'Tailwind', 'TypeScript', 'AWS', 'Mapbox', 'Circle CI'],

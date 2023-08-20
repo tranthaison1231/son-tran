@@ -24,6 +24,7 @@ interface Props {
 }
 
 const { post } = Astro.props;
+console.log(post);
 const { Content } = await post.render();
 
 const title = `${post.data.title} - ${AppConfig.site_name}`;
