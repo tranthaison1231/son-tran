@@ -10,7 +10,7 @@ import web from '@/assets/images/web.png';
 export const AppConfig = {
   site_name: 'Son Tran - Fullstack Developer',
   name: 'Son Tran',
-  bio: 'As a Frontend Tech Lead with over 4 years of experience, I specialize in building high-performance web applications using the latest technologies. My expertise lies in React, GraphQL, Apollo, Next.js, TypeScript, and AWS. I have a proven track record of leading cross-functional teams to deliver high-quality products on time and within budget. My strong leadership skills and technical acumen have enabled me to drive innovation and improve the overall user experience of the applications I have worked on.',
+  bio: 'As a Frontend Tech Lead with over 5 years of experience, I specialize in building high-performance web applications using the latest technologies. My expertise lies in React, GraphQL, Apollo, Next.js, TypeScript, and AWS. I have a proven track record of leading cross-functional teams to deliver high-quality products on time and within budget. My strong leadership skills and technical acumen have enabled me to drive innovation and improve the overall user experience of the applications I have worked on.',
   title: 'Son Tran',
   description: 'Boilerplate built with Astro using React and Tailwind CSS',
   author: 'Son Tran',
