@@ -1,6 +1,11 @@
 import acciona from '@/assets/images/acciona-logo.png';
+import backend from '@/assets/images/backend.png';
+import creator from '@/assets/images/creator.png';
 import facebook from '@/assets/images/facebook-icon.png';
 import linkedin from '@/assets/images/linkedin-icon.png';
+import mobile from '@/assets/images/mobile.png';
+import smartos from '@/assets/images/smartos-logo.png';
+import web from '@/assets/images/web.png';
 
 export const AppConfig = {
   site_name: 'Son Tran - Fullstack Developer',
@@ -44,7 +49,7 @@ export const AppConfig = {
       description: 'A smarter office space management software',
       link: '/',
       img: {
-        src: '/images/smartos-logo.png',
+        src: smartos,
         alt: 'Project Web Design',
       },
       categories: ['React', 'Frontend-Developer', 'Tailwind', 'TypeScript', 'AWS', 'Mapbox', 'Circle CI'],
@@ -55,18 +60,18 @@ export const AppConfig = {
 export const Services = [
   {
     title: 'Web Developer',
-    icon: 'src/assets/images/web.png',
+    icon: web,
   },
   {
     title: 'React Native Developer',
-    icon: 'src/assets/images/mobile.png',
+    icon: mobile,
   },
   {
     title: 'Backend Developer',
-    icon: 'src/assets/images/backend.png',
+    icon: backend,
   },
   {
     title: 'Content Creator',
-    icon: 'src/assets/images/creator.png',
+    icon: creator,
   },
 ];
