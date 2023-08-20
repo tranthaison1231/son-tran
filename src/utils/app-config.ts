@@ -14,12 +14,12 @@ export const AppConfig = {
     },
     linkedin: {
       link: 'https://www.linkedin.com/in/son-tran-b26797182/',
-      icon: 'src/assets/images/linkedin-icon.png',
+      icon: '/src/assets/images/linkedin-icon.png',
       alt: 'LinkedIn Icon',
     },
     facebook: {
       link: 'https://www.facebook.com/son.tran.17.11/',
-      icon: 'src/assets/images/facebook-icon.png',
+      icon: '/src/assets/images/facebook-icon.png',
       alt: 'Facebook Icon',
     },
   },
@@ -30,7 +30,7 @@ export const AppConfig = {
         'A management platform helps construction company to manage their employees with timesheet, manage other modules and their partners',
       link: '/',
       img: {
-        src: 'src/assets/images/acciona-logo.png',
+        src: '/src/assets/images/acciona-logo.png',
         alt: 'Acciona Logo',
       },
       categories: ['React', 'Frontend-Developer', 'Tailwind', 'TypeScript', 'AWS', 'Mapbox', 'Circle CI'],
@@ -40,7 +40,7 @@ export const AppConfig = {
       description: 'A smarter office space management software',
       link: '/',
       img: {
-        src: 'src/assets/images/smartos-logo.png',
+        src: '/src/assets/images/smartos-logo.png',
         alt: 'Project Web Design',
       },
       categories: ['React', 'Frontend-Developer', 'Tailwind', 'TypeScript', 'AWS', 'Mapbox', 'Circle CI'],
