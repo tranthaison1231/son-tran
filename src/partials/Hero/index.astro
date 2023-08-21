@@ -7,9 +7,9 @@ import { AppConfig } from '@/utils/app-config';
 import LazyComputersCanvas from './LazyComputerCanvas';
 ---
 
-<div class="relative mx-auto max-w-screen-lg px-4 py-6">
+<div class="relative mx-auto max-w-screen-lg py-6">
   <section class="mx-auto h-screen">
-    <div class="absolute z-20 flex flex-col items-center md:flex-row md:justify-between">
+    <div class="absolute z-20 flex flex-col items-center px-4 md:flex-row md:justify-between">
       <div class="animate-fade-right">
         <h1 class="mt-2 text-4xl text-white sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[98px]">
           Hi, I'm{' '}
@@ -47,12 +47,12 @@ import LazyComputersCanvas from './LazyComputerCanvas';
       </div>
     </div>
     <LazyComputersCanvas client:only />
-    <div class="absolute bottom-48 z-20 flex w-full items-center justify-center sm:bottom-40">
-      <a href="#about" aria-label="About">
-        <div class="flex h-[64px] w-[35px] items-start justify-center rounded-3xl border-4 border-[#aaa6c3] p-2">
-          <div class="mb-1 h-3 w-3 animate-jump rounded-full bg-[#aaa6c3]"></div>
-        </div>
-      </a>
-    </div>
   </section>
+  <div class="absolute bottom-48 z-20 flex w-full items-center justify-center sm:bottom-40">
+    <a href="#about" aria-label="About">
+      <div class="flex h-[64px] w-[35px] items-start justify-center rounded-3xl border-4 border-[#aaa6c3] p-2">
+        <div class="mb-1 h-3 w-3 animate-jump rounded-full bg-[#aaa6c3]"></div>
+      </div>
+    </a>
+  </div>
 </div>
