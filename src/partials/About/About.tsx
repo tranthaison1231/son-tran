@@ -9,7 +9,7 @@ const About = () => {
     triggerOnce: true,
   });
   return (
-    <div ref={ref} className="relative z-0 mx-auto max-w-7xl">
+    <div ref={ref} className="mx-auto max-w-7xl">
       <div className={inView ? 'animate-fade-down' : ''}>
         <p className="text-[14px] uppercase tracking-wider sm:text-[18px]">Introduction</p>
         <h2 className="xs:text-[40px] text-[30px] font-black text-white sm:text-[50px] md:text-[60px]">Overview.</h2>

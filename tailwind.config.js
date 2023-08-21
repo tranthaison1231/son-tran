@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
         primary: '#050716',
+      },
+      inset: {
+        40: '10rem',
       },
       backgroundImage: {
         'hero-pattern': "url('/src/assets/images/hero-bg.webp')",

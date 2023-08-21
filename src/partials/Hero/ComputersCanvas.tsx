@@ -12,7 +12,7 @@ const ComputersCanvas = () => {
     <Canvas
       frameloop="demand"
       shadows
-      style={{ height: isMobile ? 650 : 800 }}
+      className="absolute top-0 z-10"
       dpr={[1, 2]}
       camera={{ position: [10, 20, 10], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
