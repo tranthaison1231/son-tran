@@ -191,51 +191,9 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"fifth-post.md": {
-	id: "fifth-post.md";
-  slug: "fifth-post";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"first-post.md": {
-	id: "first-post.md";
-  slug: "first-post";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"forth-post.md": {
-	id: "forth-post.md";
-  slug: "forth-post";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"hello-world.md": {
-	id: "hello-world.md";
-  slug: "hello-world";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"second-post.md": {
-	id: "second-post.md";
-  slug: "second-post";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"sixth-post.md": {
-	id: "sixth-post.md";
-  slug: "sixth-post";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"third-post.md": {
-	id: "third-post.md";
-  slug: "third-post";
+"deploy-next-app-on-aws.md": {
+	id: "deploy-next-app-on-aws.md";
+  slug: "deploy-next-app-on-aws";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
