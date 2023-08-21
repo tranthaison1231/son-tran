@@ -14,7 +14,7 @@ export const AppConfig = {
   name: 'Son Tran',
   bio: 'As a Frontend Tech Lead with over 5 years of experience, I specialize in building high-performance web applications using the latest technologies. My expertise lies in React, GraphQL, Apollo, Next.js, TypeScript, and AWS. I have a proven track record of leading cross-functional teams to deliver high-quality products on time and within budget. My strong leadership skills and technical acumen have enabled me to drive innovation and improve the overall user experience of the applications I have worked on.',
   title: 'Son Tran',
-  description: 'Boilerplate built with Astro using React and Tailwind CSS',
+  description: 'Blog of Son Tran - Fullstack Developer',
   author: 'Son Tran',
   locale_region: 'en-us',
   locale: 'en',
