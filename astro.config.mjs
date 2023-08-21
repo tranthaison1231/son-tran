@@ -9,7 +9,8 @@ export default defineConfig({
   site: 'https://son-tran.vercel.app/',
   markdown: {
     shikiConfig: {
-      theme: 'monokai',
+      theme: 'dracula',
+      wrap: true,
     },
   },
   experimental: {

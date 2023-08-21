@@ -62,6 +62,39 @@ const {
 
     <ViewTransitions />
   </head>
+  <script>
+    let copyButtonLabel = 'Copy Code';
+    let codeBlocks = Array.from(document.querySelectorAll('pre'));
+
+    for (let codeBlock of codeBlocks) {
+      let wrapper = document.createElement('div');
+      wrapper.style.position = 'relative';
+      let copyButton = document.createElement('button');
+      copyButton.className = 'hover:bg-white hover:text-black absolute top-0 right-0 bg-primary px-0.5';
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute('tabindex', '0');
+      codeBlock.appendChild(copyButton);
+      codeBlock.parentNode.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener('click', async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      let code = block.querySelector('code');
+      let text = code.innerText;
+
+      await navigator.clipboard.writeText(text);
+
+      button.innerText = 'Code Copied';
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  </script>
   <body class="bg-[#050716] bg-hero-pattern bg-center bg-repeat text-gray-100">
     <Navbar />
     <slot />
