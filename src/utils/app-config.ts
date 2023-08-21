@@ -1,3 +1,5 @@
+import type { CollectionEntry } from 'astro:content';
+
 import acciona from '@/assets/images/acciona-logo.png';
 import backend from '@/assets/images/backend.png';
 import blockchain from '@/assets/images/blockchain.png';
@@ -16,6 +18,10 @@ export const AppConfig = {
   author: 'Son Tran',
   locale_region: 'en-us',
   locale: 'en',
+  image: {
+    src: '/images/avatar.jpg',
+    alt: 'Son Tran Blog',
+  },
   socials: {
     github: {
       link: 'https://github.com/tranthaison1231',
@@ -94,3 +100,38 @@ export const NAVBAR_LINKS = [
     url: AppConfig.socials.linkedin.link,
   },
 ];
+
+export function jsonLDGenerator({
+  type,
+  post,
+  url,
+}: {
+  type: string;
+  post?: CollectionEntry<'blog'>;
+  url: string | URL;
+}) {
+  if (type === 'post') {
+    return `<script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "${url}"
+        },
+        "headline": "${post?.data.title}",
+        "description": "${post?.data.description}",
+        "image": "${post?.data.imgSrc}",
+        "datePublished": "${post?.data.pubDate}"
+      }
+    </script>`;
+  }
+  return `<script type="application/ld+json">
+      {
+      "@context": "https://schema.org/",
+      "@type": "WebSite",
+      "name": "${AppConfig.title}",
+      "url": "https://son-tran.vercel.app/"
+      }
+    </script>`;
+}

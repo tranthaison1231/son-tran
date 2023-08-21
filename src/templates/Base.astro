@@ -1,19 +1,25 @@
 ---
+import { type CollectionEntry } from 'astro:content';
 import { ViewTransitions } from 'astro:transitions';
 
 import Footer from '@/partials/Footer.astro';
 import Navbar from '@/partials/Navbar.astro';
+import Seo from '@/partials/Seo.astro';
 import { AppConfig } from '@/utils/app-config';
 
 export interface Props {
   head: {
     title: string;
     description: string;
+    data?: CollectionEntry<'blog'>;
+    robots?: boolean;
+    imageSrc?: CollectionEntry<'blog'>['data']['imgSrc'];
+    imageAlt?: string;
   };
 }
 
 const {
-  head: { title, description },
+  head: { title, description, data, robots, imageSrc, imageAlt },
 } = Astro.props as Props;
 ---
 
@@ -49,6 +55,8 @@ const {
 
     <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <Seo {title} {description} url={Astro.url} {imageSrc} {imageAlt} {data} {robots} />
+
     <ViewTransitions />
   </head>
   <body class="bg-[#050716] bg-hero-pattern bg-center bg-repeat text-gray-100">

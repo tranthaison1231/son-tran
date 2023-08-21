@@ -1,0 +1,48 @@
+---
+import { type CollectionEntry } from 'astro:content';
+
+import { AppConfig, jsonLDGenerator } from '@/utils/app-config';
+
+interface Props {
+  title: string;
+  description: string;
+  url: string | URL;
+  imageSrc?: CollectionEntry<'blog'>['data']['imgSrc'];
+  imageAlt?: string;
+  data?: CollectionEntry<'blog'>;
+  robots?: boolean;
+}
+
+const { title, description, url = Astro.url, imageAlt, imageSrc, data, robots } = Astro.props;
+
+const jsonLD = jsonLDGenerator({
+  type: data ? 'post' : 'website',
+  post: data,
+  url,
+});
+---
+
+<link rel="canonical" href={url} />
+
+<meta property="og:site_name" content="My Astro Blog" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+<meta property="og:image" content={imageSrc?.src || AppConfig.image.src} />
+<meta property="og:image:url" content={imageSrc?.src || AppConfig.image.src} />
+<meta property="og:image:secure_url" content={imageSrc?.src || AppConfig.image.src} />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image:alt" content={imageAlt || AppConfig.image.alt} />
+
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content={imageSrc?.src || AppConfig.image.src} />
+<meta name="twitter:image:alt" content={title} />
+<meta name="twitter:domain" content={import.meta.env.SITE} />
+
+{robots && <meta name="robots" content="noindex, nofollow" />}
+
+<Fragment set:html={jsonLD} />

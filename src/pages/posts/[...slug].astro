@@ -29,7 +29,15 @@ const { Content } = await post.render();
 const title = `${post.data.title} - ${AppConfig.site_name}`;
 ---
 
-<Base head={{ title, description: post.data.description }}>
+<Base
+  head={{
+    title,
+    description: post.data.description,
+    data: post,
+    imageSrc: post.data.imgSrc,
+    imageAlt: post.data.imgAlt,
+  }}
+>
   <BlogPost post={post}>
     <Content />
   </BlogPost>
