@@ -34,6 +34,35 @@ const icon = (
 - Pros: Instant rendering; amenable to CSS styling; obviates secondary requests.
 - Cons: Document size inflation; potential memory and JavaScript bundle performance degradation.
 
+### Using SVGR for Icon Conversion
+
+Install SVGR as a development dependency in your project
+
+```bash
+  pnpm add vite-plugin-svgr
+```
+
+Add this plugin to `vite.config.js`
+
+```js
+// vite.config.js
+import svgr from "vite-plugin-svgr";
+
+export default {
+  // ...
+  plugins: [svgr()],
+};
+```
+
+Then SVG files can be imported as React components, just like create-react-app does:
+
+```jsx
+import { ReactComponent as Logo } from "./logo.svg";
+```
+
+- Pros:  The converted React components use JSX syntax, which makes them consistent with the rest of your React application's codebase.
+- Cons: SVGs in JS have a cost and SVGs do not belong into your JS bundle. Please read this [blog](https://kurtextrem.de/posts/svg-in-js)
+
 ### Inline SVG Using SVG Sprites
 
 ```jsx
@@ -61,6 +90,9 @@ The evaluation of different techniques revolves around the trade-off between per
 - No initial flicker; immediate rendering.
 - CSS styling possible.
 - Increases document size; affects memory and JavaScript bundle performance.
+
+### SVGR with SVG in JS 
+- It will include SVG on JS bundle
 
 ### Inline SVG Using SVG Sprites
 
