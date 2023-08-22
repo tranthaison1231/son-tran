@@ -198,6 +198,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"the-best-way-to-manage-icons-in-reactjs.md": {
+	id: "the-best-way-to-manage-icons-in-reactjs.md";
+  slug: "the-best-way-to-manage-icons-in-reactjs";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 
 	};
