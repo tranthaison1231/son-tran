@@ -9,7 +9,7 @@ import LazyComputersCanvas from './LazyComputerCanvas';
 
 <div class="relative mx-auto max-w-screen-lg py-6 text-black dark:text-white">
   <section class="mx-auto h-screen px-4">
-    <div class="z-20 flex w-full flex-col items-center md:flex-row md:justify-between md:px-0">
+    <div class="absolute z-20 flex w-full flex-col items-center md:flex-row md:justify-between md:px-0">
       <div class="animate-fade-right">
         <h1 class="mt-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[98px]">
           Hi, I'm{' '}
@@ -46,9 +46,7 @@ import LazyComputersCanvas from './LazyComputerCanvas';
         <Image width={256} height={320} src={avatar} alt="Avatar image" format="webp" loading="lazy" />
       </div>
     </div>
-    <div class="h-96">
-      <LazyComputersCanvas client:only />
-    </div>
+    <LazyComputersCanvas client:only />
   </section>
   <div class="absolute bottom-48 z-20 flex w-full items-center justify-center sm:bottom-40">
     <a href="#about" aria-label="About">
