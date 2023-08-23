@@ -3,6 +3,7 @@ import { AppConfig, NAVBAR_LINKS } from '@/utils/app-config';
 
 import NavbarMobile from './NavbarMobile';
 import Section from './Section.astro';
+import ThemeToggle from './ThemeToggle';
 ---
 
 <Section>
@@ -29,18 +30,20 @@ import Section from './Section.astro';
         {AppConfig.title}
       </div>
     </a>
-
-    <nav class="hidden sm:block">
-      <ul class="flex gap-x-3 font-medium text-gray-200">
-        {
-          NAVBAR_LINKS.map(link => (
-            <li class="hover:text-white">
-              <a href={link.url}>{link.name}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-    <NavbarMobile client:only />
+    <div class="flex gap-x-3">
+      <nav class="hidden sm:block">
+        <ul class="flex gap-x-3 font-medium text-primary dark:text-gray-200">
+          {
+            NAVBAR_LINKS.map(link => (
+              <li class="text-lg hover:text-white">
+                <a href={link.url}>{link.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <NavbarMobile client:only />
+      <ThemeToggle client:load />
+    </div>
   </div>
 </Section>

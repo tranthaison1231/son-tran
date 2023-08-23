@@ -9,7 +9,7 @@ export default defineConfig({
   site: 'https://son-tran.vercel.app/',
   markdown: {
     shikiConfig: {
-      theme: 'dracula',
+      theme: 'dracula-soft',
       wrap: true,
     },
   },

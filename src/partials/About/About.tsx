@@ -9,10 +9,10 @@ const About = () => {
     triggerOnce: true,
   });
   return (
-    <div ref={ref} className="mx-auto max-w-7xl">
+    <div ref={ref} className="mx-auto max-w-7xl text-black dark:text-white  ">
       <div className={inView ? 'animate-fade-down' : ''}>
         <p className="text-[14px] uppercase tracking-wider sm:text-[18px]">Introduction</p>
-        <h2 className="xs:text-[40px] text-[30px] font-black text-white sm:text-[50px] md:text-[60px]">Overview.</h2>
+        <h2 className="xs:text-[40px] text-[30px] font-black sm:text-[50px] md:text-[60px]">Overview.</h2>
         <p className="mt-4 max-w-3xl text-[17px] leading-[30px]">{AppConfig.bio}</p>
       </div>
       <div
