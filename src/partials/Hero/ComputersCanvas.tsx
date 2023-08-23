@@ -24,7 +24,6 @@ const ComputersCanvas = () => {
         <pointLight intensity={1} />
         <primitive
           object={computer.scene}
-          scale={isMobile ? 0.4 : 0.5}
           position={isMobile ? [0, -1.4, -1] : [0, -1.8, -1]}
           rotation={[-0.01, -0.2, -0.1]}
         />

@@ -1,6 +1,6 @@
 const CanvasLoader = () => {
   return (
-    <div className="relative top-[350px] flex flex-col items-center justify-center">
+    <div className="flex h-full flex-col items-center justify-center">
       <svg
         className="-ml-1 mr-3 h-5 w-5 animate-spin text-[#915EFF]"
         xmlns="http://www.w3.org/2000/svg"
