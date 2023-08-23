@@ -16,7 +16,7 @@ export default function ThemeToggle() {
   };
 
   return (
-    <button type="button" className="border-l border-gray-600 pl-4" onClick={toggleTheme}>
+    <button type="button" className="border-l border-gray-300 pl-4" onClick={toggleTheme}>
       {theme === 'dark' ? (
         <svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6">
           <path

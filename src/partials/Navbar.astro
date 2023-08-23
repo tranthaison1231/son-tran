@@ -7,7 +7,7 @@ import ThemeToggle from './ThemeToggle';
 ---
 
 <Section>
-  <div class="flex items-center justify-between gap-y-3">
+  <div class="flex items-center justify-between gap-y-3 text-foreground">
     <a href="/">
       <div
         class="flex items-center bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-xl font-bold text-transparent"
@@ -32,10 +32,10 @@ import ThemeToggle from './ThemeToggle';
     </a>
     <div class="flex gap-x-3">
       <nav class="hidden sm:block">
-        <ul class="flex gap-x-3 font-medium text-primary dark:text-gray-200">
+        <ul class="flex gap-x-3 font-medium">
           {
             NAVBAR_LINKS.map(link => (
-              <li class="text-lg hover:text-white">
+              <li class="text-lg hover:text-foreground/80">
                 <a href={link.url}>{link.name}</a>
               </li>
             ))

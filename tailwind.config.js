@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#050716',
+        foreground: 'hsl(var(--foreground))',
       },
       inset: {
         40: '10rem',
