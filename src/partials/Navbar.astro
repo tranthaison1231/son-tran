@@ -6,44 +6,46 @@ import Section from './Section.astro';
 import ThemeToggle from './ThemeToggle';
 ---
 
-<Section>
-  <div class="flex items-center justify-between gap-y-3 text-foreground">
-    <a href="/">
-      <div
-        class="flex items-center bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-xl font-bold text-transparent"
-      >
-        <svg
-          class="mr-1 h-10 w-10 stroke-cyan-600"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke-width="1.5"
-          stroke-lineCap="round"
-          stroke-linejoin="round"
+<div class="border-b border-gray-300 dark:border-gray-600">
+  <Section>
+    <div class="flex items-center justify-between gap-y-3 text-foreground">
+      <a href="/">
+        <div
+          class="flex items-center bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-xl font-bold text-transparent"
         >
-          <path d="M0 0h24v24H0z" stroke="none"></path>
-          <rect x="3" y="12" width="6" height="8" rx="1"></rect>
-          <rect x="9" y="8" width="6" height="12" rx="1"></rect>
-          <rect x="15" y="4" width="6" height="16" rx="1"></rect>
-          <path d="M4 20h14"></path>
-        </svg>
-        {AppConfig.title}
+          <svg
+            class="mr-1 h-10 w-10 stroke-cyan-600"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="1.5"
+            stroke-lineCap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M0 0h24v24H0z" stroke="none"></path>
+            <rect x="3" y="12" width="6" height="8" rx="1"></rect>
+            <rect x="9" y="8" width="6" height="12" rx="1"></rect>
+            <rect x="15" y="4" width="6" height="16" rx="1"></rect>
+            <path d="M4 20h14"></path>
+          </svg>
+          {AppConfig.title}
+        </div>
+      </a>
+      <div class="flex gap-x-3">
+        <nav class="hidden sm:block">
+          <ul class="flex gap-x-3 font-medium">
+            {
+              NAVBAR_LINKS.map(link => (
+                <li class="text-lg hover:border-b hover:border-primary hover:text-primary">
+                  <a href={link.url}>{link.name}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        <NavbarMobile client:only />
+        <ThemeToggle client:load />
       </div>
-    </a>
-    <div class="flex gap-x-3">
-      <nav class="hidden sm:block">
-        <ul class="flex gap-x-3 font-medium">
-          {
-            NAVBAR_LINKS.map(link => (
-              <li class="text-lg hover:text-foreground/80">
-                <a href={link.url}>{link.name}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
-      <NavbarMobile client:only />
-      <ThemeToggle client:load />
     </div>
-  </div>
-</Section>
+  </Section>
+</div>

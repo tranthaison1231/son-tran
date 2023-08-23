@@ -34,10 +34,16 @@ const {
     color-scheme: dark;
   }
   :root {
-    --foreground: 240 10% 3.9%;
+    --primary: 197, 88%, 48%;
+    --background: 0 0% 100%;
+    --foreground: 219, 47%, 11%;
+  }
+  ::selection {
+    background: hsl(var(--primary));
   }
 
   .dark {
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
   }
 
@@ -51,7 +57,7 @@ const {
   }
 </style>
 
-<html lang="en">
+<html lang="en" scroll-smooth>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,37 +76,6 @@ const {
     <ViewTransitions />
   </head>
   <script>
-    let copyButtonLabel = 'Copy Code';
-    let codeBlocks = Array.from(document.querySelectorAll('pre'));
-
-    for (let codeBlock of codeBlocks) {
-      let wrapper = document.createElement('div');
-      wrapper.style.position = 'relative';
-      let copyButton = document.createElement('button');
-      copyButton.className = 'hover:bg-white hover:text-black absolute top-0 right-0 bg-primary px-0.5';
-      copyButton.innerHTML = copyButtonLabel;
-      codeBlock.setAttribute('tabindex', '0');
-      codeBlock.appendChild(copyButton);
-      codeBlock.parentNode.insertBefore(wrapper, codeBlock);
-      wrapper.appendChild(codeBlock);
-
-      copyButton.addEventListener('click', async () => {
-        await copyCode(codeBlock, copyButton);
-      });
-    }
-
-    async function copyCode(block, button) {
-      let code = block.querySelector('code');
-      let text = code.innerText;
-
-      await navigator.clipboard.writeText(text);
-
-      button.innerText = 'Code Copied';
-
-      setTimeout(() => {
-        button.innerText = copyButtonLabel;
-      }, 700);
-    }
     const theme = (() => {
       if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
         return localStorage.getItem('theme');
@@ -118,7 +93,7 @@ const {
     }
     window.localStorage.setItem('theme', theme);
   </script>
-  <body class="bg-white bg-center bg-repeat text-white dark:bg-[#050716] dark:bg-hero-pattern dark:text-primary">
+  <body class="bg-background bg-center bg-repeat text-foreground dark:bg-hero-pattern">
     <Navbar />
     <slot />
     <Footer />

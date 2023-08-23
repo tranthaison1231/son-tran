@@ -9,11 +9,11 @@ const About = () => {
     triggerOnce: true,
   });
   return (
-    <div ref={ref} className="mx-auto max-w-7xl text-black dark:text-white  ">
+    <div ref={ref} className="mx-auto max-w-7xl text-foreground">
       <div className={inView ? 'animate-fade-down' : ''}>
-        <p className="text-[14px] uppercase tracking-wider sm:text-[18px]">Introduction</p>
-        <h2 className="xs:text-[40px] text-[30px] font-black sm:text-[50px] md:text-[60px]">Overview.</h2>
-        <p className="mt-4 max-w-3xl text-[17px] leading-[30px] text-foreground/60">{AppConfig.bio}</p>
+        <p className="text-base uppercase tracking-wider sm:text-xl">Introduction</p>
+        <h2 className="text-3xl font-black sm:text-5xl md:text-6xl">Overview.</h2>
+        <p className="mt-4 max-w-3xl text-base leading-7 text-foreground/90">{AppConfig.bio}</p>
       </div>
       <div
         className={`mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4 ${inView ? 'animate-fade-right' : ''}`}

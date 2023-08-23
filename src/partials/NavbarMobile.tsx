@@ -25,9 +25,9 @@ function NavbarMobile() {
               <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
               <g id="SVGRepo_iconCarrier">
-                <path d="M4 18L20 18" stroke="#fff" strokeWidth="2" strokeLinecap="round"></path>
-                <path d="M4 12L20 12" stroke="#fff" strokeWidth="2" strokeLinecap="round"></path>
-                <path d="M4 6L20 6" stroke="#fff" strokeWidth="2" strokeLinecap="round"></path>
+                <path d="M4 18L20 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></path>
+                <path d="M4 12L20 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></path>
+                <path d="M4 6L20 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></path>
               </g>
             </>
           ) : (
@@ -40,7 +40,7 @@ function NavbarMobile() {
                   fillRule="evenodd"
                   clipRule="evenodd"
                   d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"
-                  fill="#fff"
+                  fill="currentColor"
                 ></path>{' '}
               </g>
             </>
@@ -52,7 +52,7 @@ function NavbarMobile() {
           <a
             href={link.url}
             key={link.name}
-            className="block cursor-pointer p-5 text-2xl text-white hover:bg-white hover:text-[#7e67fd]"
+            className="block cursor-pointer p-5 text-2xl text-white hover:bg-white hover:text-primary"
           >
             {link.name}
           </a>

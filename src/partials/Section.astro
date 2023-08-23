@@ -9,7 +9,7 @@ type Props = {
 const { title } = Astro.props as Props;
 ---
 
-<div class="mx-auto max-w-screen-lg px-4 py-6 text-black dark:text-white">
+<div class="mx-auto max-w-screen-lg px-4 py-6 text-foreground dark:text-white">
   {title && <div class="mb-6 text-2xl font-bold">{title}</div>}
   <slot />
 </div>

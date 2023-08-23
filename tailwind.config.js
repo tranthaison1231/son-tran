@@ -5,8 +5,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#050716',
+        primary: 'hsl(var(--primary))',
         foreground: 'hsl(var(--foreground))',
+        background: 'hsl(var(--background))',
       },
       inset: {
         40: '10rem',

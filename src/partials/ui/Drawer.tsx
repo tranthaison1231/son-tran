@@ -18,7 +18,7 @@ function Drawer({ isOpen, onClose, children }: Props) {
         onClick={onClose}
       />
       <div
-        className={clsx('fixed inset-0 z-40 h-screen w-3/4 bg-[#2e2b5a] pt-5 text-black transition-transform', {
+        className={clsx('fixed inset-0 z-40 h-screen w-3/4 bg-[#2e2b5a] pt-5 text-foreground transition-transform', {
           'translate-x-0': isOpen,
           '-translate-x-full': !isOpen,
         })}

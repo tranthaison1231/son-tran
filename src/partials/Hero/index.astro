@@ -7,13 +7,13 @@ import { AppConfig } from '@/utils/app-config';
 import LazyComputersCanvas from './LazyComputerCanvas';
 ---
 
-<div class="relative mx-auto max-w-screen-lg py-6 text-black dark:text-white">
+<div class="relative mx-auto max-w-screen-lg py-6 text-foreground">
   <section class="mx-auto h-screen px-4">
     <div class="absolute z-20 flex w-full flex-col items-center md:flex-row md:justify-between md:px-0">
       <div class="animate-fade-right">
         <h1 class="mt-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[98px]">
           Hi, I'm{' '}
-          <span class="text-[#7e67fd]">
+          <span class="text-primary">
             {AppConfig.name}
           </span>
           <span class="inline-block animate-wave">👋🏻</span>
@@ -50,8 +50,8 @@ import LazyComputersCanvas from './LazyComputerCanvas';
   </section>
   <div class="absolute bottom-48 z-20 flex w-full items-center justify-center sm:bottom-40">
     <a href="#about" aria-label="About">
-      <div class="flex h-[64px] w-[35px] items-start justify-center rounded-3xl border-4 border-[#aaa6c3] p-2">
-        <div class="mb-1 h-3 w-3 animate-jump rounded-full bg-[#aaa6c3]"></div>
+      <div class="flex h-16 w-9 items-start justify-center rounded-3xl border-4 border-primary p-2">
+        <div class="mb-1 h-3 w-3 animate-jump rounded-full bg-primary"></div>
       </div>
     </a>
   </div>

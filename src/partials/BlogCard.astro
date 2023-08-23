@@ -25,7 +25,7 @@ const { post } = Astro.props as Props;
     <div class="px-3 pb-6 pt-4 text-center">
       <h2 class="text-xl font-semibold" transition:name={`post-title-${post.slug}`}>{post.data.title}</h2>
       <div class="mt-1 text-xs text-foreground/80">{format(new Date(post.data.pubDate), 'LLL d, yyyy')}</div>
-      <div class="mt-2 line-clamp-3 text-sm text-foreground/60">{post.data.description}</div>
+      <div class="mt-2 line-clamp-3 text-sm text-foreground">{post.data.description}</div>
     </div>
   </div>
 </a>
