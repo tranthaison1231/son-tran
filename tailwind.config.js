@@ -16,7 +16,8 @@ module.exports = {
         40: '10rem',
       },
       backgroundImage: {
-        'hero-pattern': "url('/src/assets/images/hero-bg.webp')",
+        'hero-dark': "url('/src/assets/images/hero-dark.webp')",
+        'hero-light': "url('/src/assets/images/hero-light.webp')",
       },
       keyframes: {
         'fade-left': {
