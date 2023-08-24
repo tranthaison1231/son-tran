@@ -9,6 +9,9 @@ module.exports = {
         foreground: 'hsl(var(--foreground))',
         background: 'hsl(var(--background))',
       },
+      rotate: {
+        360: '360deg',
+      },
       inset: {
         40: '10rem',
       },
@@ -74,7 +77,7 @@ module.exports = {
         'fade-left': 'fade-left 1s ease-out',
         'fade-right': 'fade-right 1s ease-out',
         'fade-down': 'fade-down 1s ease-out',
-        typing: 'typing 2s steps(60, end)',
+        typing: 'typing 1.5s steps(60, end)',
       },
     },
   },
