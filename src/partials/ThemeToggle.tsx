@@ -67,7 +67,7 @@ export default function ThemeToggle() {
           clipPath: dark ? clipPath : [...clipPath].reverse(),
         },
         {
-          duration: 600,
+          duration: 500,
           easing: 'ease-in',
           pseudoElement: dark ? '::view-transition-new(root)' : '::view-transition-old(root)',
         }
