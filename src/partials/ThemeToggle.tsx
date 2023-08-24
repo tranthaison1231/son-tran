@@ -54,6 +54,7 @@ export default function ThemeToggle() {
     <button
       ref={btnRef}
       type="button"
+      aria-label="Change Theme"
       className="border-l border-gray-300 px-4 dark:border-gray-600"
       onClick={(event) => handleToggle(event)}
     >
