@@ -30,21 +30,24 @@ export default function ThemeToggle() {
   const btnRef = useRef<HTMLButtonElement>(null);
   const [theme, setTheme] = useState(localStorage.getItem('theme') ?? 'dark');
 
-  const toggleTheme = () => {
-    if (document.documentElement.classList.contains('dark')) {
-      setTheme('light');
-      localStorage.setItem('theme', 'light');
-      document.documentElement.classList.remove('dark');
-    } else {
-      setTheme('dark');
-      localStorage.setItem('theme', 'dark');
-      document.documentElement.classList.add('dark');
-    }
+  const toggleTheme = (dark: boolean) => {
+    setTheme(dark ? 'dark' : 'light');
+    document.documentElement.classList[dark ? 'add' : 'remove']('dark');
   };
 
   const handleToggle = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    const transition = (document as any).startViewTransition(() => {
-      toggleTheme();
+    const dark = !document.documentElement.classList.contains('dark');
+    if (
+      // @ts-expect-error: View Transition api not ready with ts
+      !document.startViewTransition ||
+      window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
+    ) {
+      toggleTheme(dark);
+      return;
+    }
+    // @ts-expect-error: View Transition api not ready with ts
+    const transition = document.startViewTransition(() => {
+      toggleTheme(dark);
     });
     let x: number;
     let y: number;
@@ -61,12 +64,12 @@ export default function ThemeToggle() {
       const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`];
       document.documentElement.animate(
         {
-          clipPath: theme === 'dark' ? clipPath : [...clipPath].reverse(),
+          clipPath: dark ? clipPath : [...clipPath].reverse(),
         },
         {
-          duration: 1000,
+          duration: 600,
           easing: 'ease-in',
-          pseudoElement: theme === 'dark' ? '::view-transition-new(root)' : '::view-transition-old(root)',
+          pseudoElement: dark ? '::view-transition-new(root)' : '::view-transition-old(root)',
         }
       );
     });
