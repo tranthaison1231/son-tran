@@ -5,12 +5,13 @@ import { format } from 'date-fns';
 
 interface Props {
   post: CollectionEntry<'blog'>;
+  style?: string;
 }
 
-const { post } = Astro.props as Props;
+const { post, style } = Astro.props as Props;
 ---
 
-<a class="hover:translate-y-1" href={`/posts/${post.slug}`}>
+<a class="animate-fade-up hover:translate-y-1" style={style} href={`/posts/${post.slug}`}>
   <div class="overflow-hidden rounded-md shadow-md dark:bg-slate-800">
     <Image
       width="600"

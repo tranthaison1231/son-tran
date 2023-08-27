@@ -53,6 +53,16 @@ module.exports = {
             transform: 'translateY(0)',
           },
         },
+        'fade-up': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(1rem)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
         typing: {
           '0%': { width: '0', border: 'none' },
           '1%': { opacity: '1', 'border-right': '.15em solid #fff' },
@@ -79,8 +89,9 @@ module.exports = {
         wave: 'wave 1.5s infinite',
         jump: 'jump 1.5s infinite',
         'fade-left': 'fade-left 1s ease-out',
-        'fade-right': 'fade-right 1s ease-out',
+        'fade-right': 'fade-right 1s ease-out forwards',
         'fade-down': 'fade-down 1s ease-out',
+        'fade-up': 'fade-up 0.5s ease-out forwards',
         typing: 'typing 1.5s steps(60, end)',
       },
     },
