@@ -25,7 +25,6 @@ interface Props {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
-
 const title = `${post.data.title} - ${AppConfig.site_name}`;
 ---
 
@@ -40,6 +39,25 @@ const title = `${post.data.title} - ${AppConfig.site_name}`;
 >
   <BlogPost post={post}>
     <Content />
+    <div class="mt-10" id="comments">
+      <script is:inline>
+        script = document.createElement('script');
+        script.src = 'https://giscus.app/client.js';
+        script.setAttribute('data-repo', 'tranthaison1231/son-tran');
+        script.setAttribute('data-repo-id', 'R_kgDOJLDfzA');
+        script.setAttribute('data-category', 'Announcements');
+        script.setAttribute('data-category-id', 'DIC_kwDOJLDfzM4CZDeC');
+        script.setAttribute('data-mapping', 'pathname');
+        script.setAttribute('data-strict', '0');
+        script.setAttribute('data-reactions-enabled', '0');
+        script.setAttribute('data-emit-metadata', '0');
+        script.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+        script.setAttribute('data-lang', 'en');
+        script.setAttribute('crossorigin', 'anonymous');
+        script.async = true;
+        document.getElementById('comments').appendChild(script);
+      </script>
+    </div>
   </BlogPost>
 
   <CTA />

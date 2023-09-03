@@ -6,9 +6,24 @@ export default function ThemeToggle() {
   const btnRef = useRef<HTMLButtonElement>(null);
   const [theme, setTheme] = useState(localStorage.getItem('theme') ?? 'dark');
 
+  function changeCommentTheme() {
+    const iframe: HTMLIFrameElement | null = document.querySelector('iframe.giscus-frame');
+    iframe?.contentWindow?.postMessage?.(
+      {
+        giscus: {
+          setConfig: {
+            theme: theme === 'dark' ? 'light' : 'dark',
+          },
+        },
+      },
+      'https://giscus.app'
+    );
+  }
+
   const toggleTheme = (dark: boolean) => {
     setTheme(dark ? 'dark' : 'light');
     document.documentElement.classList[dark ? 'add' : 'remove']('dark');
+    changeCommentTheme();
   };
 
   const handleToggle = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
