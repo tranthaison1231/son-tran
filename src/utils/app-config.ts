@@ -4,10 +4,12 @@ import acciona from '@/assets/images/acciona-logo.png';
 import backend from '@/assets/images/backend.png';
 import blockchain from '@/assets/images/blockchain.png';
 import creator from '@/assets/images/creator.png';
-import facebook from '@/assets/images/facebook-icon.png';
-import linkedin from '@/assets/images/linkedin-icon.png';
 import smartos from '@/assets/images/smartos-logo.png';
 import web from '@/assets/images/web.png';
+import facebook from '@/assets/svgs/facebook.svg';
+import github from '@/assets/svgs/github.svg';
+import linkedin from '@/assets/svgs/linkedin.svg';
+import youtube from '@/assets/svgs/youtube.svg';
 
 export const AppConfig = {
   site_name: 'Son Tran - Fullstack Developer',
@@ -23,19 +25,25 @@ export const AppConfig = {
     alt: 'Son Tran Blog',
   },
   socials: {
-    github: {
-      link: 'https://github.com/tranthaison1231',
-      icon: null,
+    facebook: {
+      link: 'https://www.facebook.com/son.tran.17.11/',
+      icon: facebook,
+      alt: 'Facebook Icon',
     },
     linkedin: {
       link: 'https://www.linkedin.com/in/son-tran-b26797182/',
       icon: linkedin,
       alt: 'LinkedIn Icon',
     },
-    facebook: {
-      link: 'https://www.facebook.com/son.tran.17.11/',
-      icon: facebook,
-      alt: 'Facebook Icon',
+    github: {
+      link: 'https://www.github.com/tranthaison1231/',
+      icon: github,
+      alt: 'Github Icon',
+    },
+    youtube: {
+      link: 'https://www.youtube.com/channel/UCFGSLDaIOZpvE432Scyarow',
+      icon: youtube,
+      alt: 'Youtube Icon',
     },
   },
   projects: [
@@ -92,12 +100,8 @@ export const NAVBAR_LINKS = [
     url: '/courses',
   },
   {
-    name: 'GitHub',
-    url: AppConfig.socials.github.link,
-  },
-  {
-    name: 'Linkedin',
-    url: AppConfig.socials.linkedin.link,
+    name: 'My CV',
+    url: 'https://drive.google.com/file/d/1CklLtleiQT6lzTwMoOgCGhbd0PklAwwS/view?usp=sharing',
   },
 ];
 

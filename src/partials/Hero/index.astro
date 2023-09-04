@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
-import avatar from '@/assets/images/avatar.svg';
+import avatar from '@/assets/svgs/avatar.svg';
 import { AppConfig } from '@/utils/app-config';
 
 import LazyComputersCanvas from './LazyComputerCanvas';
@@ -29,12 +29,12 @@ import LazyComputersCanvas from './LazyComputerCanvas';
           >
         </p>
 
-        <div class="mt-3 flex gap-1">
+        <div class="mt-3 flex gap-2">
           {
             Object.values(AppConfig.socials).map(social =>
               social?.icon ? (
                 <a href={social.link} class="hover:scale-125">
-                  <Image width="40" height="40" src={social.icon} alt={social.alt} loading="eager" decoding="sync" />
+                  <Image width="34" height="34" src={social.icon} alt={social.alt} loading="eager" decoding="sync" />
                 </a>
               ) : null
             )
