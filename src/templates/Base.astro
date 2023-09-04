@@ -38,7 +38,7 @@ const {
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <Seo {title} {description} url={Astro.url} {imageSrc} {imageAlt} {data} {robots} />
-    <script>
+    <script is:inline>
       function changeTheme() {
         const root = document.documentElement;
         const theme = (() => {
