@@ -39,14 +39,14 @@ const {
     <link rel="manifest" href="/site.webmanifest" />
     <Seo {title} {description} url={Astro.url} {imageSrc} {imageAlt} {data} {robots} />
     <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      })();
       function changeTheme() {
         const root = document.documentElement;
-        const theme = (() => {
-          if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-            return localStorage.getItem('theme');
-          }
-          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        })();
         root.classList[theme === 'dark' ? 'add' : 'remove']('dark');
 
         if (typeof localStorage !== 'undefined') {
