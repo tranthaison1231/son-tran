@@ -13,10 +13,6 @@ export default defineConfig({
       wrap: true,
     },
   },
-  experimental: {
-    assets: true,
-    viewTransitions: true,
-  },
   image: {
     service: sharpImageService(),
   },
