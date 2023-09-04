@@ -49,7 +49,9 @@ const { post } = Astro.props as Props;
 </script>
 
 <Section>
-  <h1 class="animate-fade-up text-center text-3xl font-bold">{post.data.title}</h1>
+  <h1 class="animate-fade-up text-center text-3xl font-bold">
+    {post.data.title}
+  </h1>
   <div class="mt-2 animate-fade-up text-center text-sm text-foreground/80">
     By {AppConfig.author} on {format(new Date(post.data.pubDate), 'LLL d, yyyy')}
   </div>

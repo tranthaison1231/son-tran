@@ -23,60 +23,6 @@ const {
 } = Astro.props as Props;
 ---
 
-<style is:global>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-    color-scheme: dark;
-  }
-  :root {
-    --primary: 197, 88%, 48%;
-    --background: 0 0% 100%;
-    --foreground: 219, 47%, 11%;
-  }
-  ::selection {
-    background: hsl(var(--primary));
-  }
-
-  .dark {
-    --background: 240, 57%, 5%;
-    --foreground: 0 0% 98%;
-  }
-
-  .animate-delay-2000 {
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
-  }
-  .animate-fill-forwards {
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-  }
-
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
-  }
-
-  .dark::view-transition-old(root) {
-    z-index: 1;
-  }
-  .dark::view-transition-new(root) {
-    z-index: 999;
-  }
-
-  ::view-transition-old(root) {
-    z-index: 999;
-  }
-  ::view-transition-new(root) {
-    z-index: 1;
-  }
-</style>
-
 <html lang="en" scroll-smooth>
   <head>
     <meta charset="UTF-8" />
@@ -93,28 +39,83 @@ const {
     <link rel="manifest" href="/site.webmanifest" />
     <Seo {title} {description} url={Astro.url} {imageSrc} {imageAlt} {data} {robots} />
 
-    <ViewTransitions />
-  </head>
-  <script is:inline>
-    const theme = (() => {
-      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-        return localStorage.getItem('theme');
-      }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    })();
-    document.documentElement.classList[theme === 'dark' ? 'add' : 'remove']('dark');
+    <script is:inline>
+      const root = document.documentElement;
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      })();
+      root.classList[theme === 'dark' ? 'add' : 'remove']('dark');
 
-    if (typeof localStorage !== 'undefined') {
-      const observer = new MutationObserver(() => {
-        const isDark = document.documentElement.classList.contains('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      });
-      observer.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ['class'],
-      });
-    }
-  </script>
+      if (typeof localStorage !== 'undefined') {
+        const observer = new MutationObserver(() => {
+          const isDark = root.classList.contains('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+        observer.observe(root, {
+          attributes: true,
+          attributeFilter: ['class'],
+        });
+      }
+    </script>
+    <ViewTransitions />
+    <style is:global>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+        color-scheme: dark;
+      }
+      :root {
+        --primary: 197, 88%, 48%;
+        --background: 0 0% 100%;
+        --foreground: 219, 47%, 11%;
+      }
+      ::selection {
+        background: hsl(var(--primary));
+      }
+
+      .dark {
+        --background: 240, 57%, 5%;
+        --foreground: 0 0% 98%;
+      }
+
+      .animate-delay-2000 {
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+      }
+      .animate-fill-forwards {
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+
+      ::view-transition-old(root),
+      ::view-transition-new(root) {
+        animation: none;
+        mix-blend-mode: normal;
+      }
+
+      .dark::view-transition-old(root) {
+        z-index: 1;
+      }
+      .dark::view-transition-new(root) {
+        z-index: 999;
+      }
+
+      ::view-transition-old(root) {
+        z-index: 999;
+      }
+      ::view-transition-new(root) {
+        z-index: 1;
+      }
+    </style>
+  </head>
+
   <body
     class="cursor-hand bg-background bg-hero-light bg-cover text-foreground motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-in dark:bg-hero-dark dark:bg-auto dark:bg-center dark:bg-repeat"
   >
