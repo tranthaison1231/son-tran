@@ -20,7 +20,7 @@
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/react": "^18.2.24",
+    "@types/react": "^18.2.25",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
     "astro": "3.2.2",
