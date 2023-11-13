@@ -14,7 +14,7 @@ const { posts } = Astro.props as Props;
 <Section>
   <div class="mb-6 flex items-baseline justify-between text-xl text-foreground md:text-2xl">
     <p>New Blog Posts</p>
-    <a href="/posts" class="hover:text-primary">View all Posts →</a>
+    <a href="/posts" class="hover:text-primary" data-astro-prefetch>View all Posts →</a>
   </div>
   <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
     {posts.map(post => <BlogCard post={post} />)}

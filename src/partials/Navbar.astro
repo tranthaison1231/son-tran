@@ -37,7 +37,7 @@ import ThemeToggle from './ThemeToggle';
             {
               NAVBAR_LINKS.map(link => (
                 <li class="text-lg hover:border-b hover:border-primary hover:text-primary">
-                  <a href={link.url}>{link.name}</a>
+                  <a href={link.url} data-astro-prefetch>{link.name}</a>
                 </li>
               ))
             }

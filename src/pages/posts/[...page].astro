@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 import BlogList from '@/partials/BlogList.astro';
 import Section from '@/partials/Section.astro';
@@ -11,18 +11,29 @@ type GetStaticPaths = {
   paginate: any;
 };
 
+interface Props {
+  page: {
+    currentPage: number;
+    data: CollectionEntry<'blog'>[];
+    url: {
+      next?: string;
+      prev?: string;
+    }
+  }
+}
+
 export async function getStaticPaths({ paginate }: GetStaticPaths) {
   const allPosts = await getCollection('blog');
   const sortedPosts = sortByDate(allPosts);
   return paginate(sortedPosts, { pageSize: 6 });
 }
 
-const { page } = Astro.props;
+const { page } = Astro.props as Props;
 const titleSuffix = ` - ${AppConfig.site_name}`;
 const titleBase = `Blog page ${page.currentPage}`;
 const title = titleBase + titleSuffix;
 const description = 'Blog List';
----
+--- 
 
 <Base head={{ title, description }}>
   <Section>
