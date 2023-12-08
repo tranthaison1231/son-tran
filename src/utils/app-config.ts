@@ -96,12 +96,16 @@ export const NAVBAR_LINKS = [
     url: '/posts',
   },
   {
+    name: 'Projects',
+    url: '/projects',
+  },
+  {
     name: 'Courses',
     url: '/courses',
   },
   {
     name: 'My CV',
-    url: 'https://docs.google.com/document/d/1mebTJHORFG55ZW9z1EW9SApba72X0CpX8SyYPbMZopg/edit?usp=sharing',
+    url: 'https://drive.google.com/file/d/1-g5VYJPg5K7mM8FcQWYCuJBMiXYrW7Dc/view?usp=sharing',
   },
 ];
 
