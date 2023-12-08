@@ -1,0 +1,24 @@
+---
+
+import ProjectCard from '@/partials/ProjectCard.astro';
+import Section from '@/partials/Section.astro';
+import Base, { type Props } from '@/templates/Base.astro';
+import { AppConfig, Projects } from '@/utils/app-config';
+
+const titleSuffix = ` - ${AppConfig.site_name}`;
+const title = 'Project List' + titleSuffix;
+const description = 'Project List';
+--- 
+
+<Base head={{ title, description }}>
+  <Section>
+    <div class="text-center">
+      <h1 class="animate-fade-up text-3xl font-bold">Project List</h1>
+    </div>
+  </Section>
+  <Section>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+      {Projects.map(project => <ProjectCard project={project} />)}
+    </div>
+  </Section>
+</Base>

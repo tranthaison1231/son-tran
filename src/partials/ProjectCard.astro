@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  project: {
+    name: string;
+    description: string;
+    fromDate: string;
+    imgSrc: string;
+    url: string;
+    toDate: string;
+  };
+  style?: string;
+}
+
+const { project, style } = Astro.props as Props;
+---
+
+<a class="animate-fade-up hover:translate-y-1" style={style} href={project.url}>
+  <div class="overflow-hidden rounded-md shadow-md dark:bg-slate-800">
+    <Image
+      width="600"
+      height="600"
+      class="aspect-[3/2] w-full"
+      src={project.imgSrc}
+      alt={project.name}
+      loading="lazy"
+      format="webp"
+    />
+    <div class="px-3 pb-6 pt-4 text-center">
+      <h2 class="text-xl font-semibold">{project.name}</h2>
+      <div class="mt-1 text-xs text-foreground/80">{project.fromDate} - {project.toDate}</div>
+      <div class="mt-2 line-clamp-3 text-sm text-foreground">{project.description}</div>
+    </div>
+  </div>
+</a>

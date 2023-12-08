@@ -90,6 +90,33 @@ export const Services = [
   },
 ];
 
+export const Projects = [
+  {
+    name: 'Chinese Chess',
+    description: 'Side project to create a chess game with technologies like Svelte, TypeScript, Shadcn UI, AWS Lambda, API Gateway, Cloudfront, Socket',
+    url: 'https://github.com/tranthaison1231/chinese-chess',
+    fromDate: 'Oct 01, 02023',
+    toDate: 'Dec 01, 2023',
+    imgSrc: 'https://res.cloudinary.com/dx1jngfdn/image/upload/v1702022165/son-tran/Screenshot_2023-12-08_at_14.55.52_x1jwk4.png',
+  },
+  {
+    name: 'Meta Clone',
+    description: 'Project clone of Meta with Tuborepo, Golang, Postgres and Lambda for BE, Svelekit for Messenger, Nuxt for Facebook',
+    url: 'https://github.com/tranthaison1231/meta-clone',
+    fromDate: 'Oct 01, 02023',
+    toDate: 'Now',
+    imgSrc: 'https://res.cloudinary.com/dx1jngfdn/image/upload/v1702022551/Screenshot_2023-12-08_at_15.01.21_pyfoyp.png',
+  },
+  {
+    name: 'CoinInvest',
+    description: 'Project for manage and investing in crypto with Sveltekit, Prisma, Clerk and Vercel Function',
+    url: 'https://github.com/tranthaison1231/dca-system',
+    fromDate: 'Dec 01, 02023',
+    toDate: 'Now',
+    imgSrc: 'https://res.cloudinary.com/dx1jngfdn/image/upload/v1702022711/Screenshot_2023-12-08_at_15.05.00_us5tfg.png',
+  }
+]
+
 export const NAVBAR_LINKS = [
   {
     name: 'Blogs',

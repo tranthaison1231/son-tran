@@ -1,0 +1,18 @@
+---
+
+import ProjectCard from './ProjectCard.astro';
+import { Projects }  from '@/utils/app-config';
+import Section from './Section.astro';
+
+
+---
+
+<Section>
+  <div class="mb-6 flex items-baseline justify-between text-xl text-foreground md:text-2xl">
+    <p>Highligh Projects</p>
+    <a href="/projects" class="hover:text-primary" data-astro-prefetch>View all Projects →</a>
+  </div>
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {Projects.map(project => <ProjectCard project={project} />)}
+  </div>
+</Section>
