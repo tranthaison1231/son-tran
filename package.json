@@ -12,7 +12,6 @@
     "check-types": "astro check && tsc --noEmit --pretty",
     "prepare": "husky install"
   },
-  "trustedDependencies": ["sharp"],
   "devDependencies": {
     "@astrojs/react": "^3.0.7",
     "@astrojs/rss": "^4.0.1",
