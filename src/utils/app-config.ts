@@ -101,7 +101,7 @@ export const NAVBAR_LINKS = [
   },
   {
     name: 'My CV',
-    url: 'https://drive.google.com/file/d/1CklLtleiQT6lzTwMoOgCGhbd0PklAwwS/view?usp=sharing',
+    url: 'https://docs.google.com/document/d/1mebTJHORFG55ZW9z1EW9SApba72X0CpX8SyYPbMZopg/edit?usp=sharing',
   },
 ];
 
