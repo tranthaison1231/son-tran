@@ -1,5 +1,5 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content';
 
 import BlogList from '@/partials/BlogList.astro';
 import Section from '@/partials/Section.astro';
@@ -18,8 +18,8 @@ interface Props {
     url: {
       next?: string;
       prev?: string;
-    }
-  }
+    };
+  };
 }
 
 export async function getStaticPaths({ paginate }: GetStaticPaths) {
@@ -33,7 +33,7 @@ const titleSuffix = ` - ${AppConfig.site_name}`;
 const titleBase = `Blog page ${page.currentPage}`;
 const title = titleBase + titleSuffix;
 const description = 'Blog List';
---- 
+---
 
 <Base head={{ title, description }}>
   <Section>
