@@ -1,14 +1,13 @@
 ---
-
 import ProjectCard from '@/partials/ProjectCard.astro';
 import Section from '@/partials/Section.astro';
-import Base, { type Props } from '@/templates/Base.astro';
+import Base from '@/templates/Base.astro';
 import { AppConfig, Projects } from '@/utils/app-config';
 
 const titleSuffix = ` - ${AppConfig.site_name}`;
-const title = 'Project List' + titleSuffix;
+const title = `Project List${titleSuffix}`;
 const description = 'Project List';
---- 
+---
 
 <Base head={{ title, description }}>
   <Section>
