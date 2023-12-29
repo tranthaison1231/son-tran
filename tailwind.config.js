@@ -19,9 +19,6 @@ module.exports = {
         'hero-dark': "url('/src/assets/images/hero-dark.webp')",
         'hero-light': "url('/src/assets/images/hero-light.webp')",
       },
-      cursor: {
-        hand: 'url(/src/assets/images/hand-cursor.png), default',
-      },
       keyframes: {
         'fade-left': {
           '0%': {
