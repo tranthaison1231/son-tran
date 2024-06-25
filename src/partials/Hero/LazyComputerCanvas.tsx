@@ -1,20 +1,20 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense } from "react";
 
-import useIsMounted from '@/hooks/useIsMounted';
+import useIsMounted from "@/hooks/useIsMounted";
 
-import CanvasLoader from './Loader';
+import CanvasLoader from "./Loader";
 
-const ComputerCanvas = lazy(() => import('./ComputersCanvas'));
+const ComputerCanvas = lazy(() => import("./ComputersCanvas"));
 
 const LazyComputersCanvas = () => {
-  const isMounted = useIsMounted();
+	const isMounted = useIsMounted();
 
-  if (!isMounted) return null;
-  return (
-    <Suspense fallback={<CanvasLoader />}>
-      <ComputerCanvas />
-    </Suspense>
-  );
+	if (!isMounted) return null;
+	return (
+		<Suspense fallback={<CanvasLoader />}>
+			<ComputerCanvas />
+		</Suspense>
+	);
 };
 
 export default LazyComputersCanvas;

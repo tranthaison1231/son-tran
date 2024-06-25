@@ -1,15 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-import About from '@/partials/About/index.astro';
-import Hero from '@/partials/Hero/index.astro';
-import RecentPosts from '@/partials/RecentPosts.astro';
-import RecentProjects from '@/partials/RecentProjects.astro';
-import Base from '@/templates/Base.astro';
-import { AppConfig } from '@/utils/app-config';
-import { sortByDate } from '@/utils/post';
+import About from "@/partials/About/index.astro";
+import Hero from "@/partials/Hero/index.astro";
+import RecentPosts from "@/partials/RecentPosts.astro";
+import RecentProjects from "@/partials/RecentProjects.astro";
+import Base from "@/templates/Base.astro";
+import { AppConfig } from "@/utils/app-config";
+import { sortByDate } from "@/utils/post";
 
-const posts = await getCollection('blog');
+const posts = await getCollection("blog");
 const sortedPosts = sortByDate(posts);
 const lastThreePosts = sortedPosts.slice(0, 3);
 

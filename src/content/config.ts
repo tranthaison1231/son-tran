@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
   schema: () =>
@@ -7,7 +7,12 @@ const blog = defineCollection({
       pubDate: z.date(),
       imgSrc: z.string(),
       imgAlt: z.string(),
-      description: z.string().max(160, 'For best SEO results, please keep the description under 160 characters.'),
+      description: z
+        .string()
+        .max(
+          160,
+          "For best SEO results, please keep the description under 160 characters.",
+        ),
     }),
 });
 

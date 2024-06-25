@@ -1,24 +1,32 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from "astro:content";
 
-import { AppConfig, jsonLDGenerator } from '@/utils/app-config';
+import { AppConfig, jsonLDGenerator } from "@/utils/app-config";
 
 interface Props {
-  title: string;
-  description: string;
-  url: string | URL;
-  imageSrc?: CollectionEntry<'blog'>['data']['imgSrc'];
-  imageAlt?: string;
-  data?: CollectionEntry<'blog'>;
-  robots?: boolean;
+	title: string;
+	description: string;
+	url: string | URL;
+	imageSrc?: CollectionEntry<"blog">["data"]["imgSrc"];
+	imageAlt?: string;
+	data?: CollectionEntry<"blog">;
+	robots?: boolean;
 }
 
-const { title, description, url = Astro.url, imageAlt, imageSrc, data, robots } = Astro.props;
+const {
+	title,
+	description,
+	url = Astro.url,
+	imageAlt,
+	imageSrc,
+	data,
+	robots,
+} = Astro.props;
 
 const jsonLD = jsonLDGenerator({
-  type: data ? 'post' : 'website',
-  post: data,
-  url,
+	type: data ? "post" : "website",
+	post: data,
+	url,
 });
 const image = imageSrc || AppConfig.image.src;
 ---

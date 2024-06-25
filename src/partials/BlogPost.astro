@@ -1,14 +1,14 @@
 ---
-import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
-import { format } from 'date-fns';
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { format } from "date-fns";
 
-import { AppConfig } from '@/utils/app-config';
+import { AppConfig } from "@/utils/app-config";
 
-import Section from './Section.astro';
+import Section from "./Section.astro";
 
 type Props = {
-  post: CollectionEntry<'blog'>;
+	post: CollectionEntry<"blog">;
 };
 
 const { post } = Astro.props as Props;

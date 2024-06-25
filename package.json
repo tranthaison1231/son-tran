@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "clean": "rimraf dist",
     "lint": "pnpm biome lint --write",
+    "format": "pnpm biome format --write",
     "check-types": "astro check && tsc --noEmit --pretty",
     "prepare": "husky install"
   },

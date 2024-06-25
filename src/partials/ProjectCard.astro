@@ -1,16 +1,16 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 interface Props {
-  project: {
-    name: string;
-    description: string;
-    fromDate: string;
-    imgSrc: string;
-    url: string;
-    toDate: string;
-  };
-  style?: string;
+	project: {
+		name: string;
+		description: string;
+		fromDate: string;
+		imgSrc: string;
+		url: string;
+		toDate: string;
+	};
+	style?: string;
 }
 
 const { project, style } = Astro.props as Props;

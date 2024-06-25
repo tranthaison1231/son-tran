@@ -1,25 +1,25 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { ViewTransitions } from 'astro:transitions';
+import type { CollectionEntry } from "astro:content";
+import { ViewTransitions } from "astro:transitions";
 
-import Footer from '@/partials/Footer.astro';
-import Navbar from '@/partials/Navbar.astro';
-import Seo from '@/partials/Seo.astro';
-import { AppConfig } from '@/utils/app-config';
+import Footer from "@/partials/Footer.astro";
+import Navbar from "@/partials/Navbar.astro";
+import Seo from "@/partials/Seo.astro";
+import { AppConfig } from "@/utils/app-config";
 
 export interface Props {
-  head: {
-    title: string;
-    description: string;
-    data?: CollectionEntry<'blog'>;
-    robots?: boolean;
-    imageSrc?: CollectionEntry<'blog'>['data']['imgSrc'];
-    imageAlt?: string;
-  };
+	head: {
+		title: string;
+		description: string;
+		data?: CollectionEntry<"blog">;
+		robots?: boolean;
+		imageSrc?: CollectionEntry<"blog">["data"]["imgSrc"];
+		imageAlt?: string;
+	};
 }
 
 const {
-  head: { title, description, data, robots, imageSrc, imageAlt },
+	head: { title, description, data, robots, imageSrc, imageAlt },
 } = Astro.props as Props;
 ---
 
