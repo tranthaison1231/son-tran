@@ -31,7 +31,7 @@ export default function ThemeToggle() {
     if (
       // @ts-expect-error: View Transition api not ready with ts
       !document.startViewTransition ||
-      window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches === true
     ) {
       toggleTheme(dark);
       return;

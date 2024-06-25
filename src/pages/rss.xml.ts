@@ -8,5 +8,5 @@ export const get = () =>
     description: AppConfig.description,
     site: import.meta.env.SITE,
     items: import.meta.glob('./**/*.md'),
-    customData: `<language>en-us</language>`,
+    customData: '<language>en-us</language>',
   });

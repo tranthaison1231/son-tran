@@ -1,4 +1,5 @@
 # Son Tran Porfolio
+
 ## Features
 
 A complete Blog feature:
@@ -17,21 +18,11 @@ Developer experience first:
 - 🔥 Astro
 - 🎨 Tailwind CSS with typography plugin
 - 🎉 TypeScript
-- ✏️ ESLint compatible with .astro files
-- 🛠 Prettier compatible with .astro files
+- ✏️ Biome with .astro files
 - 🦊 Husky
 - 🚫 lint-staged
 - 🚨 Commitlint
 - 🔧 One-click deploy on Netlify (or, manual if you prefer)
-
-ESLint with:
-
-- Airbnb styled guide
-- TypeScript compatible
-- Astro compatible
-- Automatically remove unused imports
-- Import sorting
-- Tailwind CSS plugin
 
 ### Philosophy
 
@@ -42,4 +33,3 @@ ESLint with:
 ### Requirements
 
 - Node.js and npm
-
