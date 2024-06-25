@@ -82,7 +82,7 @@ export default function ThemeToggle() {
       ref={btnRef}
       type="button"
       aria-label="Change Theme"
-      className="border-l border-gray-300 px-4 dark:border-gray-600"
+      className="border-gray-300·border-l·px-4·dark:border-gray-600"
       onClick={(event) => handleToggle(event)}
     >
       <div className="relative h-4 w-4">
@@ -108,7 +108,7 @@ export default function ThemeToggle() {
         </div>
         <div
           className={cn("absolute top-0 scale-0 ease-in", {
-            "rotate-360 scale-1 duration-1000 delay-75": theme === "dark",
+            "rotate-360·scale-1·delay-75·duration-1000": theme === "dark",
           })}
         >
           <svg
