@@ -2,7 +2,7 @@ import { useInView } from "react-intersection-observer";
 
 import { AppConfig, Services } from "@/utils/app-config";
 
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "../ServiceCard";
 
 const About = () => {
 	const { ref, inView } = useInView({

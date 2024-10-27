@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 
-import About from "@/partials/About/index.astro";
-import Hero from "@/partials/Hero/index.astro";
-import RecentPosts from "@/partials/RecentPosts.astro";
-import RecentProjects from "@/partials/RecentProjects.astro";
-import Base from "@/templates/Base.astro";
+import About from "@/components/organisms/About/index.astro";
+import Hero from "@/components/molecules/Hero.astro";
+import RecentPosts from "@/components/organisms/RecentPosts.astro";
+import RecentProjects from "@/components/organisms/RecentProjects.astro";
+import Base from "@/components/templates/Base.astro";
 import { AppConfig } from "@/utils/app-config";
 import { sortByDate } from "@/utils/post";
 

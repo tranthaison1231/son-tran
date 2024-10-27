@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import { BackgroundGradient } from "../ui/BackgroundGradient";
+import { BackgroundGradient } from "../molecules/BackgroundGradient";
 
 interface Props {
 	title: string;

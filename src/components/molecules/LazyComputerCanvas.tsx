@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 
 import useIsMounted from "@/hooks/useIsMounted";
 
-import CanvasLoader from "./Loader";
+import CanvasLoader from "../atoms/Loader";
 
 const ComputerCanvas = lazy(() => import("./ComputersCanvas"));
 

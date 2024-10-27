@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { NAVBAR_LINKS } from "@/utils/app-config";
 
-import Drawer from "./ui/Drawer";
+import Drawer from "../atoms/Drawer";
 
 function NavbarMobile() {
 	const [isOpen, setIsOpen] = useState(false);

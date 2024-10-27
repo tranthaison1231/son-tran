@@ -33,14 +33,12 @@ export default function ThemeToggle() {
 	) => {
 		const dark = !document.documentElement.classList.contains("dark");
 		if (
-			// @ts-expect-error: View Transition api not ready with ts
 			!document.startViewTransition ||
 			window.matchMedia("(prefers-reduced-motion: reduce)").matches === true
 		) {
 			toggleTheme(dark);
 			return;
 		}
-		// @ts-expect-error: View Transition api not ready with ts
 		const transition = document.startViewTransition(() => {
 			toggleTheme(dark);
 		});
